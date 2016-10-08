@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+Project("{10032AB1-059E-6E09-7D80-3435B1AD7792}") = "3 Band Eq", "3 Band Eq.vcxproj", "{568F0372-A13E-A878-D2DF-A69C4FFC26E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{568F0372-A13E-A878-D2DF-A69C4FFC26E3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{568F0372-A13E-A878-D2DF-A69C4FFC26E3}.Debug|Win32.Build.0 = Debug|Win32
+		{568F0372-A13E-A878-D2DF-A69C4FFC26E3}.Release|Win32.ActiveCfg = Release|Win32
+		{568F0372-A13E-A878-D2DF-A69C4FFC26E3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
