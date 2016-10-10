@@ -1,0 +1,241 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Thesis Proposal
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In order for a spacecraft to successfully land on the surface of a planet
+ or other body in the correct location, accurate possition, attitude, and
+ velocity data is required.
+ There are many useful instruments which contribute to this data.
+ Doppler ladar in particular is interesting because it can contribute to
+ each aspect of the aforementioned data.
+ If used correctly the measurements of a multi-beam Doppler ladar system
+ can be combined to get an accurate velocity vector, attitude, and if enough
+ beams or beam steering angles are available Doppler ladar can even be used
+ to aquire necessary navigational information.
+ A significant challenge in the design of any space craft is budgeting not
+ only cost but also power, space, and weight.
+ In order to maintain these budgets it is prudent to design or purchase
+ a Doppler ladar system which reaches the performance requirements for the
+ mission with minimum cost, power consumption, size, and weight.
+ 
+\end_layout
+
+\begin_layout Standard
+An individual or group tasked with purchasing or especially designing a
+ Doppler ladar system would need to determine what kind of parameters in
+ the system would meet the requirements of the mission.
+ Evaluating the performance of a Doppler ladar system requires that either
+ the system is built and tested experimentally or the system to be simulated.
+ The problems with building a system and testing experimentally to determine
+ if it meets mission requirements are obvious, if the system does not meet
+ requirements large amounts of time and money have been wasted and if the
+ system does meet requirements it is unknown whether a less expensive, smaller,
+ or lower power system may have also met the requirements.
+ Robust parameterized simulation tools for Doppler ladar, however, are not
+ widely available and it would be time consuming and costly to create simulation
+ tools to design one Doppler ladar system.
+ 
+\end_layout
+
+\begin_layout Standard
+LadarSIM is a robust parameterized simulation tool for time of flight ladar
+ developed at Utah State University's Center for Advanced Imaging and Ladar
+ over the past decade and a half.
+ LadarSIM has the flexibility to simulate a wide range of time of flight
+ ladar systems with varrying beam and scanner patterns with paramterized
+ transmitters and receivers.
+ These simulated systems can be evaluated using scenarios consisting of
+ user specified terrain, targets, and flight paths.
+ Taking full advantage of the significant work that has gone into creating
+ the LadarSIM software, a simulation of a paramterized Doppler transmitter
+ and receiver will be added to LadarSIM to evaluate the performance of Doppler
+ lidar systems.
+ Utilizing this Doppler ladar simulation capability of LadarSIM a trade-off
+ study will be perfomed to determine the effect of varrying laser transmission
+ power, beam divergance, aperture diameter, and FFT size on a Doppler ladar
+ system.
+ These parameters have been selected becuase of the significant effect they
+ can have on the performance, cost, size, and power consumption of a Doppler
+ ladar system.
+ 
+\end_layout
+
+\begin_layout Standard
+It is anticiapted that the results of this research will present a clear
+ demonstration of the effects of these parameters on a Doppler ladar system.
+ For each of these parameters it is expected that performance will increase
+ as the value of the parameter is improved but diminishing returns will
+ be evident.
+ Using this data a designer would have strong guidence in designing the
+ parameters of a Doppler ladar system to their mission requirements while
+ expending the minimal necessary resources.
+ 
+\end_layout
+
+\begin_layout Section
+Lit Review
+\end_layout
+
+\begin_layout Section
+Research and Design Methods
+\end_layout
+
+\begin_layout Standard
+The goal of this research project is to assertain and demonstrate the effects
+ of various characteristics of a Doppler LIDAR system on the performance
+ of said system.
+ The parameters to be studies are laser transmission power, beam divergance,
+ aperture diameter, and FFT size.
+ These parameters have been selected because of their potential effect on
+ the overall performance, cost, power consumption, weight, and computational
+ power of a system.
+ The results of this research will simplify the task of designing or selecting
+ a Doppler LIDAR system by providing information about where to best allocate
+ resources to achieve performance requirements.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to simulate the effects of these characteristics on a Doppler LIDAR
+ system, a detailed parameterized simulation of Doppler LIDAR (has been/will
+ be) added to the LadarSIM Ladar simulation software.
+ The updated LadarSIM software will then be used to simulate various Doppler
+ LIDAR systems with varrying transmission power, beam divergance, aperture
+ diameter, and FFT size, and recording the performance of these instruments
+ in a varriety of simulated scenarios.
+ LadarSIM is a robust and realistic simulation which accurately simulates
+ the real world behavior of a Lidar system.
+ After simulating the true measurements of range and velocity of the scenario
+ LadarSIM simulates the transmission of a beam and its interaction with
+ the atmosphere and the target, the detection process is then simulated
+ on the resulting signal.
+ In order to simulate the random processes which affect real world systems,
+ the detection process consists of calculating the probability that the
+ modified returned signal will be detected then taking a random draw to
+ determine if the signal will be detected.
+ For each simulated beam, the probability of detection will be recorded
+ with information about the range and angle of incident to the target.
+ By averaging this probability of detection for each beam in a scenario
+ over several scenarios an overall probability of detection will be calculated.
+ The information about the range and angle of incident will be used to compare
+ performace under different conditions.
+ 
+\end_layout
+
+\begin_layout Standard
+This method will be sufficient to determine the effect of transmission power,
+ beam divergance, and aperture diameter but the effects of FFT size may
+ be more difficulat to assertain.
+ The way that FFT size would effect probability of detection and not just
+ the precision of that detection is scaloping loss.
+ The further a frequency is from a bin center of the FFT the lower its magnitude
+ becomes reaching one half its magnitude spread between two bins when the
+ frequency is in the center of two bins this is scaloping loss.
+ Because scaloping loss is a function of distance from a bin center frequency
+ the effect it will have on probability of detection will be periodic in
+ range and not a function of absolute distance to the target.
+ The effect of FFT size may therefore be determined by including an estimate
+ or measure of the probabity of where a beat frequency may lie in respect
+ to the bin centers of the FFT and factoring that probability into the overall
+ probability of detection or by performing monte carlo experiments when
+ the FFT size is varried.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to make the effect of each parameter as evident as possible, each
+ parameter will be varried and measured while holding the other paremters
+ constant.
+ This will also cut down on the number of simulations because it will not
+ be neccessary to simulate every possible combination of parameters to determine
+ the effects of each paramter.
+ It is expected that the effect of each of these parameters will monotonically
+ increase and there will not be an ideal value of any parameter.
+ 
+\end_layout
+
+\begin_layout Section
+Preliminary Suppositions and Implications
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\end_body
+\end_document
