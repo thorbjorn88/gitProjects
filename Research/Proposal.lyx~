@@ -187,8 +187,8 @@ In order to simulate the effects of these characteristics on a Doppler lidar
  LadarSIM simulates the transmission and return of a beam by modeling the
  interactions of the beam with the atmosphere, target, receiver optics,
  and electronics to obtain a simulated returned signal.
- Using this returned signal and models of the noise in the system the probabilit
-y of detection and false alarm are calculated.
+ Using this returned signal and models of noise in the system the probability
+ of detection and false alarms are calculated.
  For each simulated beam, the probability of detection and false alarm will
  be recorded with information about the range and angle of incident to the
  target.
