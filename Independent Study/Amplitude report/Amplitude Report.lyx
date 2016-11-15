@@ -109,7 +109,7 @@ Tremelo is a very straight forward effect.
 
 \begin_layout Standard
 Achieving a tremelo effect digitally is very simple.
- The difference equation is showin in Eq 
+ The difference equation is shown in Eq 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:trem1"
@@ -157,7 +157,7 @@ reference "eq:trem2"
 
 \end_inset
 
- is the most common LFO function but triangle, saw-tooth, and sqaure wave
+ is the most common LFO function but triangle, saw-tooth, and square wave
  functions can also be used for different sounds.
  
 \end_layout
@@ -167,7 +167,7 @@ Ring Modulation
 \end_layout
 
 \begin_layout Standard
-Tremelo is perceived as a rythmic change in amplitude because the LFO for
+Tremelo is perceived as a rhythmic change in amplitude because the LFO for
  tremelo is set below 10-20 Hz.
  This is because the human ear cannot perceive sounds below about 20Hz.
  By raising the frequency of the LFO beyond this perception cutoff the effect
@@ -181,7 +181,7 @@ reference "eq:trem2"
 
 \end_inset
 
- and with a slight modifcation to m[n] shown in Eq 
+ and with a slight modification to m[n] shown in Eq 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ring1"
@@ -196,8 +196,8 @@ reference "eq:ring1"
  When the LFO frequency is set there are very few frequencies which, when
  summed and differenced with the LFO, will result in a sound that harmonizes
  with the rest of the piece.
- Ring modulation is sometimes used in experimental or psycodelic music and
- famously used in scoring for sci-fi movies.
+ Ring modulation is sometimes used in experimental or psychedelic music
+ and famously used in scoring for sci-fi movies.
  
 \end_layout
 
@@ -216,8 +216,81 @@ m[n]=cos(ω_{c}n)\label{eq:ring1}
 Dynamic Range Compression
 \end_layout
 
+\begin_layout Standard
+Compression is a vital effect for making guitar and music in general sound
+ good.
+ It's often describe as something you don't notice when it's there but you'll
+ miss when it's gone.
+ Basically compression applies a variable gain to a signal to control the
+ dynamic range of the signal.
+ If the signal's amplitude is under a given threshold then the gain is 0
+ dB, if the amplitude is greater the gain will be less than 0 dB.
+ In order to implement a compressor digitally there are two basic processes
+ which must occur.
+ The gain must be calculated then applied.
+ The application of the gain is a simple multiplication process.
+ The calculation of the gain is more complicated and there are many ways
+ to achieve a working result.
+ A simple and common equation for the gain computer is shown in Eq 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:comp"
+
+\end_inset
+
+.
+ Where y
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+
+is the gain, T is the threshold, x
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+
+ is input gain, and R is the compression ratio.
+ This equation is applied when the peak amplitude of the input to the gain
+ computer is above the threshold as determined by a simple peak detector.
+ The gain computer can take either the input or the output signal to the
+ effect to create either a feed-forward or a feedback configuration respectively.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{G}=T+(x_{G}-T)/R\label{eq:comp}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Conclusion
+\end_layout
+
+\begin_layout Standard
+The three effects discussed in this report span the spectrum of frequency
+ of use.
+ Dynamic range compression is ubiquitous in modern music, tremelo is moderately
+ common and not too hard to find if you look for it, and ring modulation
+ is so rare in music you'd have to find either an experimental musician
+ or a specific film soundtrack to hear it.
+ The common thread in these effects is that the real effect is a simple
+ multiplication to adjust the amplitude of the signal but how that gain
+ is calculated varies.
+ 
 \end_layout
 
 \end_body
