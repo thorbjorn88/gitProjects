@@ -1,0 +1,56 @@
+%
+%  This is an example of how a LaTeX thesis should be formatted.  This
+%  document contains chapter 1 of the thesis.
+%
+%  Time-stamp: "[sample-chapter1.tex] last modified by Scott Budge (scott) on 2016-07-27 (Wednesday, 27 July 2016) at 17:04:08 on goga.ece.usu.edu"
+%
+%  Info: $Id: sample-chapter1.tex 967 2016-07-28 15:33:29Z scott $   USU
+%  Revision: $Rev: 967 $
+% $LastChangedDate: 2016-07-28 09:33:29 -0600 (Thu, 28 Jul 2016) $
+% $LastChangedBy: scott $
+%
+
+\chapter{LITERATURE REVIEW}
+
+Adany et al.
+describe the operation and performance of a simplified homodyne detection
+scheme.
+In this scheme a waveform generator drives an electro-optic modulator which
+modulates an optical signal from a laser.
+The resulting signal is split into two parts.
+One part is amplified and sent to the telescope and the other is used as
+the local oscillator.
+The returning signal from the telescope is optically mixed with the local
+oscillator signal and detected by a balanced photodetector.
+An FFT is then performed on the detected signal to determine detected range
+and speed.
+\cite{adany09}.
+This scheme is on NASA's Morphious test vehicle in order to demonstrate
+it's utility as a potential instrument for planetary landing missions.
+\cite{amz12}.
+Because of its use by NASA the simplified homodyne detection scheme has
+been selected as the basis of the doppler lidar simulation in LadarSIM.
+
+Adany et al.
+tested their lidar at ground level at ranges of 50 m and 370 m \cite{adany09}.
+The NASA instrument has been tested mounted on a helicopter and the morpheus
+test vehicle to demonstrate its performance.
+In the altitude tests the altidue varried from approximately 50 m to 1700
+m (pierrottet papers).
+The Morpheus test vehicle was launched to a 250 m altitude then descended
+along a 30 degree path to a simulated landing field.
+These tests provide useful data to compare with simulated results.
+The results of Adany et al.
+are particularly interesting because they include a return spectrum from
+the 370m experiment.
+The experiments of Adany et al.
+fall short in that the targets all had relatively good reflectivity and
+an approximately 90 degree angle incidence therefore there is little to
+be learn about spectra resulting from non-ideal conditions.
+The expiriments performed by NASA accurately mimic real world circumstances
+but no data on the resulting spectra is provided and no information on
+the performance of the system at long ranges.The simulation proposed will
+therefore provide insight on data which is not readily available, performance
+information and spectra from non-ideal scenarios.
+This data will be useful in making decisions about doppler lidar system
+characteristics as well as improving detection algorithms for doppler lidar.

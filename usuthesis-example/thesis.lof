@@ -1,0 +1,4 @@
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Binary splitting.}}{1}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Binary splitting (drawn with TikZ).}}{2}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Circuit example drawn using circuitikz.}}{2}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Example figure made with PGFplots. Originally created in Matlab, then exported using the Matlab2TikZ script (available from Matlab Central). Then pasted into the \LaTeX \nobreakspace {} document and edited for style. }}{3}{figure.1.4}

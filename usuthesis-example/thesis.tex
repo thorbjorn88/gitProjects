@@ -28,7 +28,7 @@
 %
 
 % For the ECE Department:
-\documentclass[ee,dissertation]{usuthesis}
+\documentclass[ee,thesis,proposal]{usuthesis}
 % For the MAE Department:
 %\documentclass[mae,msthesis]{usuthesis}
 
@@ -76,16 +76,14 @@
 %}}}
 
 % Author and Title Information
-\author{John Q. Engineer}
+\author{David B. Chester}
 \title{A Complicated and Impressive Sounding Title that is Too Long
   For a Single Line While Including Everything}
 
 % The Committee
-\majorprof{Richard P. Feynmann, PhD}
-\firstreader{Robert L. Forward, PhD}
-\secondreader{Albert Einstein, PhD}
-\thirdreader{Gottfried Liebniz, PhD}
-\fourthreader{Isaac Newton, PhD}
+\majorprof{Scott E. Budge, PhD}
+\firstreader{Jacob Gunther, PhD}
+\secondreader{Charles M. Swenson, PhD}
 
 % Graduate Dean
 \graddean{Mark R. McLellan, PhD}
@@ -94,43 +92,47 @@ Dean of the School of Graduate Studies}
 
 % Degree Information
 %\degree{Master of Science}
-\degree{Doctor of Philosophy}
+\degree{Master of Science}
 \month{May}
-\gradyear{2016}
+\gradyear{2017}
 
 \begin{document}
     %{{{ Frontmatter
     \preliminaries   % set frontmatter style
     
     \maketitle
-    \makecopyright        % optional
+%    \makecopyright        % optional
     
-    \include{abstract}
-    \include{publicabstract}
-    \include{dedication}  % optional 
-    \include{acknowl}     % optional
+%    \include{abstract}
+%    \include{publicabstract}
+%    \include{dedication}  % optional 
+%    \include{acknowl}     % optional
     
     \tableofcontents 
-    \listoftables 
-    \listoffigures
+%    \listoftables 
+%    \listoffigures
     
 %    \include{notation}  % optional
-    \include{acronyms}  % optional  
+%    \include{acronyms}  % optional  
     %}}}
     %{{{ The main body of the thesis
     \body  % set main body style
     % Chapters
+    here's some stuff i wrote \cite{adany09}
     \include{sample-chapter1}
-    \include{sample-chapter2}
+    \include{litreview}
+    \include{methods}
+    \include{conclusion}
     
     % Endmatter
     % For BibTeX references: specify a .bib file and a style.
     % The style used here is for IEEE transactions formatting:
-    \references{IEEEabrv,sample}{IEEEtran}
+    \bibliographystyle{IEEEtran}
+    \bibliography{myBib}
     % The style used here is for AIAA formatting:
 %    \references{IEEEabrv,sample}{aiaa}
     
-    \include{appendix}
-    \include{vita}
+%    \include{appendix}
+%    \include{vita}
     %}}}
 \end{document}

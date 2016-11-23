@@ -30,8 +30,9 @@
 #ifndef __PLUGINPROCESSOR_H_4693CB6E__
 #define __PLUGINPROCESSOR_H_4693CB6E__
 
+#define _USE_MATH_DEFINES
 #include "../JuceLibraryCode/JuceHeader.h"
-
+#include "ParametricEQFilter.h"
 
 //==============================================================================
 /**
@@ -94,15 +95,19 @@ public:
     
 	enum Parameters
 	{
-		kTrebParam = 0,
-		kMidParam = 0,
-		kBassParam = 0,
+		kTrebParam,
+		kMidParam,
+		kBassParam,
         kNumParameters
     };
     
-    float volume_;
+    float treb_,mid_,bass_;
 private:
-    //==============================================================================
+	void updateEQFilter(float sampleRate);
+
+	ParametricEQFilter **eqFilters_;
+	int numEqFilters_;
+	//==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EmptyAudioProcessor);
 };
 

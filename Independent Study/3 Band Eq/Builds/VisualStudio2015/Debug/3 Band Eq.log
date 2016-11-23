@@ -1,0 +1,33 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (empty.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  PluginProcessor.cpp
+  PluginEditor.cpp
+  juce_audio_basics.cpp
+  juce_audio_devices.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_devices.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_devices/juce_audio_devices.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_basics.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_basics/juce_audio_basics.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juceheader.h(18): fatal error C1083: Cannot open include file: 'juce_audio_basics/juce_audio_basics.h': No such file or directory (compiling source file ..\..\Source\PluginEditor.cpp)
+  juce_audio_formats.cpp
+  juce_audio_plugin_client_utils.cpp
+  juce_audio_plugin_client_VST2.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juceheader.h(18): fatal error C1083: Cannot open include file: 'juce_audio_basics/juce_audio_basics.h': No such file or directory (compiling source file ..\..\Source\PluginProcessor.cpp)
+  juce_audio_processors.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_plugin_client_utils.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_plugin_client/juce_audio_plugin_client_utils.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_formats.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_formats/juce_audio_formats.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_plugin_client_vst2.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_plugin_client/juce_audio_plugin_client_VST2.cpp': No such file or directory
+  juce_audio_utils.cpp
+  juce_core.cpp
+  juce_data_structures.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_processors.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_processors/juce_audio_processors.cpp': No such file or directory
+  juce_events.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_core.cpp(9): fatal error C1083: Cannot open include file: 'juce_core/juce_core.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_audio_utils.cpp(9): fatal error C1083: Cannot open include file: 'juce_audio_utils/juce_audio_utils.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_data_structures.cpp(9): fatal error C1083: Cannot open include file: 'juce_data_structures/juce_data_structures.cpp': No such file or directory
+  juce_graphics.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_events.cpp(9): fatal error C1083: Cannot open include file: 'juce_events/juce_events.cpp': No such file or directory
+  juce_gui_basics.cpp
+  juce_gui_extra.cpp
+  juce_opengl.cpp
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_gui_extra.cpp(9): fatal error C1083: Cannot open include file: 'juce_gui_extra/juce_gui_extra.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_opengl.cpp(9): fatal error C1083: Cannot open include file: 'juce_opengl/juce_opengl.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_gui_basics.cpp(9): fatal error C1083: Cannot open include file: 'juce_gui_basics/juce_gui_basics.cpp': No such file or directory
+c:\users\chest\gitprojects\independent study\3 band eq\jucelibrarycode\juce_graphics.cpp(9): fatal error C1083: Cannot open include file: 'juce_graphics/juce_graphics.cpp': No such file or directory

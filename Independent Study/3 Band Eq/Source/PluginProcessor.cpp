@@ -36,8 +36,15 @@ EmptyAudioProcessor::EmptyAudioProcessor()
 {
     // Set default values:
     
-    volume_ = 1.0;
-    lastUIWidth_ = 170;
+	treb_ = 1;
+	mid_ = 1;
+	bass_ = 1;
+
+	//Initialize the filters later when we know how many channels
+	eqFilters_ = 0;
+	numEqFilters_ = 0;
+
+    lastUIWidth_ = 550;
     lastUIHeight_ = 100;
 }
 
@@ -63,8 +70,10 @@ float EmptyAudioProcessor::getParameter (int index)
     // UI-related, or anything at all that may block in any way!
     switch (index)
     {
-        case kVolumeParam:     return volume_;
-        default:               return 0.0f;
+	case kTrebParam:	return treb_;
+	case kMidParam:     return mid_;
+	case kBassParam:    return bass_;
+	default:            return 0.0f;
     }
 }
 
@@ -73,22 +82,33 @@ void EmptyAudioProcessor::setParameter (int index, float newValue)
     // This method will be called by the host, probably on the audio thread, so
     // it's absolutely time-critical. Don't use critical sections or anything
     // UI-related, or anything at all that may block in any way!
-    switch (index)
-    {
-        case kVolumeParam:
-            volume_ = newValue;
-            break;
-        default:
-            break;
-    }
+	switch (index)
+	{
+	case kTrebParam:
+		treb_ = newValue;
+		updateEQFilter(getSampleRate());
+		break;
+	case kMidParam:
+		mid_ = newValue;
+		updateEQFilter(getSampleRate());
+		break;
+	case kBassParam:
+		bass_ = newValue;
+		updateEQFilter(getSampleRate());
+		break;
+	default:
+		break;
+	}
 }
 
 const String EmptyAudioProcessor::getParameterName (int index)
 {
     switch (index)
     {
-        case kVolumeParam:     return "volume";
-        default:               break;
+		case kTrebParam:	return "Treble";
+		case kMidParam:     return "Middle";
+		case kBassParam:    return "Bass";
+		default:            break;
     }
     
     return String::empty;
@@ -177,8 +197,18 @@ void EmptyAudioProcessor::changeProgramName (int index, const String& newName)
 //==============================================================================
 void EmptyAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+	// Create as many filters as we have input channels
+	numEqFilters_ = getNumInputChannels();
+	eqFilters_ = (ParametricEQFilter**)malloc(numEqFilters_ * sizeof(ParametricEQFilter*));
+	if (eqFilters_ == 0)
+		numEqFilters_ = 0;
+	else {
+		for (int i = 0; i < numEqFilters_; i++)
+			eqFilters_[i] = new ParametricEQFilter;
+	}
+
+	// Update the filter settings to work with the current parameters and sample rate
+	updateEQFilter(sampleRate);
 }
 
 void EmptyAudioProcessor::releaseResources()

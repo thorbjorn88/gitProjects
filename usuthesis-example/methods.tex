@@ -1,0 +1,58 @@
+%
+%  This is an example of how a LaTeX thesis should be formatted.  This
+%  document contains chapter 1 of the thesis.
+%
+%  Time-stamp: "[sample-chapter1.tex] last modified by Scott Budge (scott) on 2016-07-27 (Wednesday, 27 July 2016) at 17:04:08 on goga.ece.usu.edu"
+%
+%  Info: $Id: sample-chapter1.tex 967 2016-07-28 15:33:29Z scott $   USU
+%  Revision: $Rev: 967 $
+% $LastChangedDate: 2016-07-28 09:33:29 -0600 (Thu, 28 Jul 2016) $
+% $LastChangedBy: scott $
+%
+
+\chapter{RESEARCH AND DESIGN METHODS}
+The goal of this research project is to ascertain and demonstrate the effects
+of particular parameters on the performance of a Doppler lidar system.
+The parameters to be studied are laser transmission power, beam divergence,
+aperture diameter, and FFT size.
+These parameters have been selected because of their potential effect on
+the overall performance, cost, power consumption, weight, and computational
+power of a system.
+The results of this research will simplify the task of designing or selecting
+a Doppler lidar system by providing information about where to best allocate
+resources to achieve performance requirements.
+
+In order to simulate the effects of these characteristics on a Doppler lidar
+system, a detailed parametrized simulation of Doppler lidar will be added
+to the LadarSIM lidar simulation software.
+The updated LadarSIM software will then be used to simulate various Doppler
+lidar systems with varying transmission power, beam divergence, aperture
+diameter, and FFT size then the performance of these instruments will be
+evaluated in a variety of simulated scenarios by calculating and recording
+the probabilities of detection and false alarm.
+LadarSIM is a robust and realistic simulator which accurately simulates
+the real world behavior of a lidar system.
+After simulating the true measurements of range and velocity of a scenario,
+LadarSIM simulates the transmission and return of a beam by modeling the
+interactions of the beam with the atmosphere, target, receiver optics,
+and electronics to obtain a simulated returned signal.
+Using this returned signal and models of the noise in the system the probability
+of detection and false alarm are calculated.
+For each simulated beam, the probability of detection and false alarm will
+be recorded with information about the range and angle of incident to the
+target.
+This data will be used to compare the performance of Doppler lidar systems
+with different parameters.
+The information about the range and angle of incident will be used to compare
+performance under different conditions.
+
+In order to make the effect of each parameter as evident as possible, each
+parameter will be varied and measured while holding the other parameters
+constant.
+This will also cut down on the number of simulations because it will not
+be necessary to simulate every possible combination of parameters to determine
+the effects of each parameter.
+However, the parameters of aperture diameter and laser transmission power
+are directly related.
+An increase in one will proportionally offset a decrease in the other.
+This relationship will be studied and the resulting trade-offs presented.

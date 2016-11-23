@@ -45,18 +45,18 @@ EmptyAudioProcessorEditor::EmptyAudioProcessorEditor (EmptyAudioProcessor* owner
     addAndMakeVisible(&trebSlider_);
 	trebSlider_.setSliderStyle(Slider::Rotary);
 	trebSlider_.addListener(this);
-	trebSlider_.setRange(0.0, 10, 0.5);
+	trebSlider_.setRange(0.0, 1, 0.05);
 
 	addAndMakeVisible(&midSlider_);
 	midSlider_.setSliderStyle(Slider::Rotary);
 	midSlider_.addListener(this);
-	midSlider_.setRange(0.0, 10, 0.5);
+	midSlider_.setRange(0.0, 1, 0.05);
 
 
 	addAndMakeVisible(&bassSlider_);
 	bassSlider_.setSliderStyle(Slider::Rotary);
 	bassSlider_.addListener(this);
-	bassSlider_.setRange(0.0, 10, 0.5);
+	bassSlider_.setRange(0.0, 1, 0.05);
     
     trebLabel_.attachToComponent(&trebSlider_, false);
 	trebLabel_.setFont(Font (11.0f));
@@ -69,7 +69,7 @@ EmptyAudioProcessorEditor::EmptyAudioProcessorEditor (EmptyAudioProcessor* owner
     
     // add the triangular resizer component for the bottom-right of the UI
     addAndMakeVisible(resizer_ = new ResizableCornerComponent (this, &resizeLimits_));
-    resizeLimits_.setSizeLimits(170, 100, 400, 160);
+    resizeLimits_.setSizeLimits(550, 100, 550, 160);
     
     // set our component's initial size to be the last one that was stored in the filter's settings
     setSize(ownerFilter->lastUIWidth_,

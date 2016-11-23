@@ -1,0 +1,58 @@
+﻿  ParametricEQFilter.cpp
+  PluginProcessor.cpp
+  PluginEditor.cpp
+  juce_audio_basics.cpp
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(88): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(96): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(131): warning C4100: 'index': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(136): warning C4100: 'index': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(183): warning C4100: 'index': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(187): warning C4100: 'index': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(192): warning C4100: 'newName': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(192): warning C4100: 'index': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(213): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(203): warning C4996: 'juce::AudioProcessor::getNumInputChannels': was declared deprecated
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(197): warning C4100: 'samplesPerBlock': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(231): warning C4996: 'juce::AudioProcessor::getNumInputChannels': was declared deprecated
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(232): warning C4996: 'juce::AudioProcessor::getNumOutputChannels': was declared deprecated
+  c:\users\chest\juce\modules\juce_audio_processors\processors\juce_audioprocessor.h(935): note: see declaration of 'juce::AudioProcessor::getNumOutputChannels'
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(228): warning C4100: 'midiMessages': unreferenced formal parameter
+c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\pluginprocessor.cpp(309): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  juce_audio_devices.cpp
+  juce_audio_formats.cpp
+  juce_audio_plugin_client_utils.cpp
+  juce_audio_plugin_client_VST2.cpp
+  juce_audio_processors.cpp
+  juce_audio_utils.cpp
+  juce_core.cpp
+  juce_data_structures.cpp
+  juce_events.cpp
+  juce_graphics.cpp
+  juce_gui_basics.cpp
+  juce_gui_extra.cpp
+  juce_opengl.cpp
+     Creating library C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Debug\parametriceq.lib and object C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Debug\parametriceq.exp
+  parametriceq.vcxproj -> C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Debug\parametriceq.dll
