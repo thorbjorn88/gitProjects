@@ -12,7 +12,8 @@
 
 \chapter{RESEARCH AND DESIGN METHODS}
 The goal of this research project is to ascertain and demonstrate the effects
-of particular parameters on the performance of a Doppler lidar system.
+of particular parameters on the performance of a Doppler lidar system by 
+developing a robust parameterized simulation of FMCW Doppler lidar.
 The parameters to be studied are laser transmission power, beam divergence,
 aperture diameter, and FFT size.
 These parameters have been selected because of their potential effect on
@@ -31,11 +32,10 @@ diameter, and FFT size then the performance of these instruments will be
 evaluated in a variety of simulated scenarios by calculating and recording
 the probabilities of detection and false alarm.
 LadarSIM is a robust and realistic simulator which accurately simulates
-the real world behavior of a lidar system.
+the real world behavior of a lidar system \cite{budgeLeishman,neilsenBudge}.
 After simulating the true measurements of range and velocity of a scenario,
 LadarSIM simulates the transmission and return of a beam by modeling the
-interactions of the beam with the atmosphere, target, receiver optics,
-and electronics to obtain a simulated returned signal.
+interactions of the beam with the atmourned signal.
 Using this returned signal and models of the noise in the system the probability
 of detection and false alarm are calculated.
 For each simulated beam, the probability of detection and false alarm will
