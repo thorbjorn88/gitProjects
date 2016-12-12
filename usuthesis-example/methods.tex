@@ -11,9 +11,31 @@
 %
 
 \chapter{RESEARCH AND DESIGN METHODS}
-The goal of this research project is to ascertain and demonstrate the effects
-of particular parameters on the performance of a Doppler lidar system by 
-developing a robust parameterized simulation of FMCW Doppler lidar.
+
+\section{Simulation Development}
+LadarSIM is a robust and realistic simulation tool which accurately simulates
+the real world behavior of a lidar system \cite{budgeLeishman,neilsenBudge}.
+LadarSIM works by first performing a geometric simulation on the scenario. 
+During this stage the of the simulation user specified beam scanning patters,
+platform flight paths, and terrain are used to obtain the true measurements
+of range that a perfect lidar system would produce.
+The next stage of simulation, called the radiometry simulation, takes these
+true measurements and simulates the effects of transmission, environmental and 
+target interactions, receiver processes, and detection. Using the results of 
+this simulation a point cloud is created which represents the data the simulated
+lidar would receive in the scenario. 
+
+In order to add a simulation of FMCW Doppler lidar to LadarSIM both
+stages of this simulation process must be updated to different degrees. The 
+geometry simulation only needs to be modified to include the true velocity
+measurements in addition to range. On the other hand there is little overlap 
+between the process of simulating time of flight lidar and Doppler lidar. It is
+therefore expected that the bulk of the time in updating LadarSIM will be spent
+creating the simulation of the Doppler transceiver. 
+\section{Trade-off Study}
+The goals of area of research is to ascertain and demonstrate the effects
+of particular parameters on the performance of a Doppler lidar system using
+the simulation to be developed.
 The parameters to be studied are laser transmission power, beam divergence,
 aperture diameter, and FFT size.
 These parameters have been selected because of their potential effect on
@@ -21,38 +43,75 @@ the overall performance, cost, power consumption, weight, and computational
 power of a system.
 The results of this research will simplify the task of designing or selecting
 a Doppler lidar system by providing information about where to best allocate
-resources to achieve performance requirements.
+resources to achieve performance requirements. The updated LadarSIM software
+will be used to simulated Doppler lidar systems with varying transmission 
+power, beam divergence, aperture diameter, and FFT size. The performance of 
+these systems will be evaluated in a variety of scenarios by calculating and
+recording the probabilities of detection and false alarm. 
 
-In order to simulate the effects of these characteristics on a Doppler lidar
-system, a detailed parametrized simulation of Doppler lidar will be added
-to the LadarSIM lidar simulation software.
-The updated LadarSIM software will then be used to simulate various Doppler
-lidar systems with varying transmission power, beam divergence, aperture
-diameter, and FFT size then the performance of these instruments will be
-evaluated in a variety of simulated scenarios by calculating and recording
-the probabilities of detection and false alarm.
-LadarSIM is a robust and realistic simulator which accurately simulates
-the real world behavior of a lidar system \cite{budgeLeishman,neilsenBudge}.
-After simulating the true measurements of range and velocity of a scenario,
-LadarSIM simulates the transmission and return of a beam by modeling the
-interactions of the beam with the atmourned signal.
-Using this returned signal and models of the noise in the system the probability
-of detection and false alarm are calculated.
-For each simulated beam, the probability of detection and false alarm will
-be recorded with information about the range and angle of incident to the
-target.
-This data will be used to compare the performance of Doppler lidar systems
-with different parameters.
-The information about the range and angle of incident will be used to compare
-performance under different conditions.
+\section{Scanning Pattern Experiments}
+NASA's current Doppler lidar instrument which was tested on the Morpheus test 
+platform uses a fixed telescope that sends beams in 3 directions \cite{amz12,amz12fiber,amz12p2,amz16coherent}.
+The resulting scan patter is useful in that it provides 3 points per scan which can 
+be used to obtain attitude and velocity vectors relative to the terrain during landing.
+This is useful but has disadvantages such as the possibility that turbulence or 
+the landing vehicle swinging on a parachute may result in one or more beams not
+being directed toward the ground for some time which means there will not be sufficient
+data to obtain attitude and velocity vectors. There has been some interest on the 
+part of NASA to investigate alternative telescope solutions which would allow for 
+flexible scanning patterns which could fix this and other problems with the current
+system\cite{budge2016simulation}. It is possible that novel scanning patterns could
+provide better performance in obtaining attitude and velocity data during landing and
+potentially be used in terrain mapping or hazard avoidance. 
 
-In order to make the effect of each parameter as evident as possible, each
-parameter will be varied and measured while holding the other parameters
-constant.
-This will also cut down on the number of simulations because it will not
-be necessary to simulate every possible combination of parameters to determine
-the effects of each parameter.
-However, the parameters of aperture diameter and laser transmission power
-are directly related.
-An increase in one will proportionally offset a decrease in the other.
-This relationship will be studied and the resulting trade-offs presented.
+Using the updated LadarSIM software the three point scanning pattern used by NASA as
+well as other novel scanning patterns will be simulated and compared to research how
+scanning patterns can improve the reliability of navigational data and explore what 
+roles Doppler lidar systems may potentially fill in future missions.  
+
+
+%The goals of this research project is to ascertain and demonstrate the effects
+%of particular parameters on the performance of a Doppler lidar system by 
+%developing a robust parameterized simulation of FMCW Doppler lidar.
+%The parameters to be studied are laser transmission power, beam divergence,
+%aperture diameter, and FFT size.
+%These parameters have been selected because of their potential effect on
+%the overall performance, cost, power consumption, weight, and computational
+%power of a system.
+%The results of this research will simplify the task of designing or selecting
+%a Doppler lidar system by providing information about where to best allocate
+%resources to achieve performance requirements.
+%
+%In order to simulate the effects of these characteristics on a Doppler lidar
+%system, a detailed parametrized simulation of Doppler lidar will be added
+%to the LadarSIM lidar simulation software.
+%The updated LadarSIM software will then be used to simulate various Doppler
+%lidar systems with varying transmission power, beam divergence, aperture
+%diameter, and FFT size then the performance of these instruments will be
+%evaluated in a variety of simulated scenarios by calculating and recording
+%the probabilities of detection and false alarm.
+%LadarSIM is a robust and realistic simulator which accurately simulates
+%the real world behavior of a lidar system \cite{budgeLeishman,neilsenBudge}.
+%After simulating the true measurements of range and velocity of a scenario,
+%LadarSIM simulates the transmission and return of a beam by modeling the
+%interactions of the beam with the atmourned signal.
+%Using this returned signal and models of the noise in the system the probability
+%of detection and false alarm are calculated.
+%For each simulated beam, the probability of detection and false alarm will
+%be recorded with information about the range and angle of incident to the
+%target.
+%This data will be used to compare the performance of Doppler lidar systems
+%with different parameters.
+%The information about the range and angle of incident will be used to compare
+%performance under different conditions.
+%
+%In order to make the effect of each parameter as evident as possible, each
+%parameter will be varied and measured while holding the other parameters
+%constant.
+%This will also cut down on the number of simulations because it will not
+%be necessary to simulate every possible combination of parameters to determine
+%the effects of each parameter.
+%However, the parameters of aperture diameter and laser transmission power
+%are directly related.
+%An increase in one will proportionally offset a decrease in the other.
+%This relationship will be studied and the resulting trade-offs presented.

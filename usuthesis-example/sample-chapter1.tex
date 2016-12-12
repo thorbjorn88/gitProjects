@@ -14,32 +14,52 @@
 %%%%%%%% This line gets rid of page number on first page of text
 \thispagestyle{empty}
 %%%%%%%%%%%%%
+Recent and upcoming missions for the exploration of solar system bodies require accurate
+position and velocity data during the descent phase ensure safe landing at pre-designated
+sites. Because of inertial measurement unit (IMU) drift during travel, the data provided 
+by the IMU may not be reliable. One solution proposed by NASA is the use of a frequency
+modulated continuous wave (FMCW) Doppler lidar system during the landing phase to provide
+additional information about attitude, position, and velocity to contribute to a successful
+landing \cite{amz12,amz12fiber,amz12p2}. The optimization and comparison of potential configurations
+of such a system would be greatly aided by an appropriate simulation tool.
 
 LadarSIM is a robust parametrized simulation tool for time of flight lidar
 developed at Utah State University's Center
 for Advanced Imaging Ladar over the past decade and a half \cite{budgeLeishman,neilsenBudge}.
 LadarSIM has the flexibility to simulate a wide range of time of flight
-lidar systems with varying beam and scanner patterns and parametrized transmitt
-ers and receivers.
+lidar systems with varying beam and scanner patterns as well as parametrized transmitters
+and receivers.
 These simulated systems can be evaluated using scenarios consisting of
 user specified terrain, targets, and flight paths.
-Taking full advantage of the significant work that has gone into creating
-the LadarSIM software, a simulation of a parametrized FMCW Doppler transmitter
-and receiver will be added to LadarSIM to evaluate the performance of Doppler
-lidar systems.
-Utilizing this Doppler lidar simulation capability a trade-off study will
-be performed to determine the effects of varying laser transmission power,
-beam divergence, aperture diameter, and FFT size on a Doppler lidar system.
-These parameters have been selected because of the significant effect they
-can have on the performance, cost, size, and power consumption of a Doppler
-lidar system.
 
-It is anticipated that the results of this research will present a clear
-demonstration of the effects of these parameters on a Doppler lidar system.
-For each of these parameters it is expected that performance will increase
-as the value of the parameter is improved but diminishing returns will
-be evident.
-Using this data, a designer would have strong guidance in designing the
-parameters of a Doppler lidar system to meet mission requirements while
-expending the minimum necessary resources.
+The proposed research has three objectives. First to add a parameterized simulation
+of an FMCW lidar transmitter and receiver, second utilize that simulation to perform
+a trade-off study to determine the effects of varying laser transmission power, beam
+divergence, aperture diameter, and FFT size on a Doppler lidar system, and to use the
+simulation to compare traditional and novel scanning patterns in planetary landing 
+scenarios. 
+
+The resulting simulation will be useful in the development of Doppler lidar systems
+with a wide range of transceiver characteristics and nearly arbitrary beam and 
+scanning parameters. The information gained from the trade-off study will provide
+valuable insight for someone designing or selecting a Doppler lidar system to meet
+mission requirements. Point clouds from the comparison of scanning patterns will 
+test the potential utility of a Doppler lidar system for terrain mapping, navigation,
+and hazard avoidance. 
+
+%Utilizing this Doppler lidar simulation capability a trade-off study will
+%be performed to determine the effects of varying laser transmission power,
+%beam divergence, aperture diameter, and FFT size on a Doppler lidar system.
+%These parameters have been selected because of the significant effect they
+%can have on the performance, cost, size, and power consumption of a Doppler
+%lidar system.
+
+%It is anticipated that the results of this research will present a clear
+%demonstration of the effects of these parameters on a Doppler lidar system.
+%For each of these parameters it is expected that performance will increase
+%as the value of the parameter is improved but diminishing returns will
+%be evident.
+%Using this data, a designer would have strong guidance in designing the
+%parameters of a Doppler lidar system to meet mission requirements while
+%expending the minimum necessary resources.
 

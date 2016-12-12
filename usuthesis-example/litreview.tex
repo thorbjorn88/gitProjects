@@ -12,6 +12,23 @@
 
 \chapter{LITERATURE REVIEW}
 
+\section{Frequency Modulated Continuous Waveform Homodyne Detection}
+A continuous wave radar in which a single microwave oscillator serves as both
+the transmitter and local oscillator (LO) is, generally speaking, a homodyne radar.
+Frequency modulated continuous waveform (FMCW) radar systems often leverage a 
+homodyne architecture. In FMCW homodyne radar the continuous wave signal is modulated
+to create a linear chirp which is transmitted via antenna toward a target. The return
+echo signal, which is delayed in time, is mixed with the LO signal. The result is a signal 
+which is comprised of a linearly increasing chirp signal, which is actively filtered out, and 
+the beat frequency which is used for detection \cite{brooker2009}. 
+
+Because microwaves and lasers are both electromagnetic radiation, just in different
+segments of the electromagnetic spectrum, an FMCW homodyne lidar can be developed by 
+replacing components such as the antenna and the microwave oscillator with equivalent 
+devices for creating, transmitting, receiving, and analyzing a laser signal. 
+
+
+\section{Simplified Homodyne Detection}
 Adany et al.
 describe the operation and performance of a simplified homodyne detection
 scheme.
@@ -25,43 +42,46 @@ oscillator signal and detected by a balanced photodetector.
 An FFT is then performed on the detected signal to determine detected range
 and speed.
 \cite{adany09}.
-This scheme is implemented NASA's Morphious test vehicle in order to demonstrate
+This scheme is implemented NASA's Morpheus test vehicle in order to demonstrate
 its utility as a potential instrument for planetary landing missions.
 \cite{amz12,amz12p2,amz12fiber,amz16coherent}.
 Because of its use by NASA the simplified homodyne detection scheme has
-been selected as the basis of the doppler lidar simulation in LadarSIM.
+been selected as the basis of the Doppler lidar simulation in LadarSIM.
 
+\section{Simplified Homodyne Performance}
 Adany et al.
 tested their lidar at ground level at ranges of 50 m and 370 m \cite{adany09}.
 The NASA instrument has been tested mounted on a helicopter and the morpheus
 test vehicle to demonstrate its performance.
-In the altitude tests the altidue varried from approximately 50 m to 1700
+In the helicopter tests, the altitude was varied from approximately 50 m to 1700
 m \cite{pierrottet2009flight,pierrottet2011navigation}.
 The Morpheus test vehicle was launched to a 250 m altitude then descended
 along a 30 degree path to a simulated landing field \cite{amz16coherent}.
 These tests provide useful data to compare with simulated results.
 The results of Adany et al.
 are particularly interesting because they include a return spectrum from
-the 370m experiment.
+the 370m experiment which will be useful in comparing to simulated spectra.
 The experiments of Adany et al.
 fall short in that the targets all had relatively good reflectivity and
 an approximately 90 degree angle incidence therefore there is little to
-be learn about spectra resulting from non-ideal conditions.
-The expiriments performed by NASA accurately mimic real world circumstances
+be learned about spectra resulting from non-ideal conditions.
+The experiments performed by NASA accurately mimic real world circumstances
 but no data on the resulting spectra is provided and no information on
 the performance of the system at long ranges.The simulation proposed will
 therefore provide insight on data which is not readily available, performance
 information and spectra from non-ideal scenarios.
-This data will be useful in making decisions about doppler lidar system
-characteristics as well as improving detection algorithms for doppler lidar.
+This data will be useful in making decisions about Doppler lidar system
+characteristics as well as improving detection algorithms for Doppler lidar.
 
+\section{Spectrum Analysis Methods}
 A key step in the detection of FMCW lidar or radar is obtaining the frequency spectrum 
 of the returned signal. This is typically done with an FFT. Resolution of range and speed
 is inextricably tied to the resolution in frequency domain. Hence obtaining many samples
-of the returned signal and performing a large FFT that signal allows for the improved 
+of the returned signal and performing a large FFT on that signal allows for good 
 resolution. While it is necessary that the FFT be large only a relatively small 
 number of the bins will contain peaks of the return signal. In order to reduce computational
-complexity alternative methods can be used to obtain the return spectrum. Al-Qudsi et al. demonstrate 
+complexity and potentially increase performance, alternative methods can be used to obtain 
+the return spectrum. Al-Qudsi et al. demonstrate 
 how a Zoom FFT (ZFFT) can be used to significantly decrease the computational complexity
 fo FMCW radar. The ZFFT basically works by determining what portion of the total signal
 is of interest then filtering the signal to isolate the signal of interest so that a smaller
@@ -71,12 +91,13 @@ to be uniform. Using the Chirp Z-transform frequency bins can be placed densely 
 resolution is required and sparsely where it is not, potentially resulting in better resolution
 on important details with less computational complexity \cite{Pen-ChengChirpZ,wangThresh}. 
 
+\section{Probability of Dropout and False Alarm}
 Two very important metrics in evaluating the performance of a Doppler lidar system are probability
 of detection and false alarm rate. Probability of detection describes the probability that a detection
 will not be missed and the probability of false alarm describes the probability that something will be
-detected which is not the true return signal. Both of these phenomena are cause by noise in the signal
-either pulling a returned signal below the detection threshold or simply peaking above the detection 
-threshold. In order to simulate this behavior it is necessary to simulate the FFT of noise. Mark A. Richards
-provides an in depth derrivation of this \cite{richards2007dftnoise}. Wang et al. also examine the effects
+detected which is not part of the true return signal. Both of these phenomena are cause by noise in the signal
+either pulling a returned signal below the detection threshold or simply noise peaking above the detection 
+threshold. In order to simulate this behavior it is necessary to simulate the noise in the bins of the FFT. Mark A. Richards
+provides an in depth derivation of this \cite{richards2007dftnoise}. Wang et al. also examine the effects
 of noise on an FMCW radar's performance along with picket fence effect and derive the detection probability
 and false alarm probability as well as propose an improved threshold detection method \cite{wangThresh}. 

@@ -1,4 +1,12 @@
 \BOOKMARK [0][-]{chapter.1}{INTRODUCTION}{}% 1
 \BOOKMARK [0][-]{chapter.2}{LITERATURE REVIEW}{}% 2
-\BOOKMARK [0][-]{chapter.3}{RESEARCH AND DESIGN METHODS}{}% 3
-\BOOKMARK [0][-]{chapter.4}{CONCLUSION}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Frequency Modulated Continuous Waveform Homodyne Detection}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Simplified Homodyne Detection}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Simplified Homodyne Performance}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Spectrum Analysis Methods}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.5}{Probability of Dropout and False Alarm}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{RESEARCH AND DESIGN METHODS}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Simulation Development}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{Trade-off Study}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.3}{Scanning Pattern Experiments}{chapter.3}% 11
+\BOOKMARK [0][-]{chapter.4}{CONCLUSION}{}% 12
