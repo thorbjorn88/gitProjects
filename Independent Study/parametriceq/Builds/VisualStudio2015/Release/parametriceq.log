@@ -2,47 +2,66 @@
   PluginProcessor.cpp
   PluginEditor.cpp
   juce_audio_basics.cpp
+..\..\Source\ParametricEQFilter.cpp(45): error C2065: 'discreteFrequency': undeclared identifier
+..\..\Source\ParametricEQFilter.cpp(45): error C2065: 'Q': undeclared identifier
+..\..\Source\ParametricEQFilter.cpp(45): error C2672: 'juce::jmin': no matching overloaded function found
+..\..\Source\ParametricEQFilter.cpp(45): error C2780: 'Type juce::jmin(const Type,const Type,const Type,const Type)': expects 4 arguments - 2 provided
+  c:\juce\modules\juce_core\maths/juce_MathsFunctions.h(120): note: see declaration of 'juce::jmin'
+..\..\Source\ParametricEQFilter.cpp(45): error C2780: 'Type juce::jmin(const Type,const Type,const Type)': expects 3 arguments - 2 provided
+  c:\juce\modules\juce_core\maths/juce_MathsFunctions.h(116): note: see declaration of 'juce::jmin'
+..\..\Source\ParametricEQFilter.cpp(45): error C2789: 'bandwidth': an object of const-qualified type must be initialized
+  ..\..\Source\ParametricEQFilter.cpp(45): note: see declaration of 'bandwidth'
+..\..\Source\ParametricEQFilter.cpp(46): error C2065: 'discreteFrequency': undeclared identifier
+..\..\Source\ParametricEQFilter.cpp(46): error C2789: 'two_cos_wc': an object of const-qualified type must be initialized
+  ..\..\Source\ParametricEQFilter.cpp(46): note: see declaration of 'two_cos_wc'
+..\..\Source\ParametricEQFilter.cpp(48): error C2065: 'gainFactor': undeclared identifier
+..\..\Source\ParametricEQFilter.cpp(48): error C2789: 'g_tan_half_bw': an object of const-qualified type must be initialized
+  ..\..\Source\ParametricEQFilter.cpp(48): note: see declaration of 'g_tan_half_bw'
+..\..\Source\ParametricEQFilter.cpp(49): error C2065: 'gainFactor': undeclared identifier
+..\..\Source\ParametricEQFilter.cpp(49): error C2789: 'sqrt_g': an object of const-qualified type must be initialized
+  ..\..\Source\ParametricEQFilter.cpp(49): note: see declaration of 'sqrt_g'
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginEditor.cpp)
   juce_audio_devices.cpp
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginProcessor.cpp)
+  juce_audio_formats.cpp
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginProcessor.cpp)
+c:\users\chest\gitprojects\independent study\parametriceq\source\PluginProcessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginProcessor.cpp)
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginProcessor.cpp)
 ..\..\Source\PluginProcessor.cpp(88): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 ..\..\Source\PluginProcessor.cpp(92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 ..\..\Source\PluginProcessor.cpp(96): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 ..\..\Source\PluginProcessor.cpp(131): warning C4100: 'index': unreferenced formal parameter
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(68): warning C4996: 'juce::AudioProcessor::getInputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(949): note: see declaration of 'juce::AudioProcessor::getInputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(136): warning C4100: 'index': unreferenced formal parameter
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(69): warning C4996: 'juce::AudioProcessor::getOutputChannelName': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(183): warning C4100: 'index': unreferenced formal parameter
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(950): note: see declaration of 'juce::AudioProcessor::getOutputChannelName' (compiling source file ..\..\Source\PluginEditor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(70): warning C4996: 'juce::AudioProcessor::isInputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(187): warning C4100: 'index': unreferenced formal parameter
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(957): note: see declaration of 'juce::AudioProcessor::isInputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(192): warning C4100: 'newName': unreferenced formal parameter
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(71): warning C4996: 'juce::AudioProcessor::isOutputChannelStereoPair': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(192): warning C4100: 'index': unreferenced formal parameter
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(958): note: see declaration of 'juce::AudioProcessor::isOutputChannelStereoPair' (compiling source file ..\..\Source\PluginEditor.cpp)
-c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\source\PluginProcessor.h(73): warning C4996: 'juce::AudioProcessor::silenceInProducesSilenceOut': was declared deprecated (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(213): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(1020): note: see declaration of 'juce::AudioProcessor::silenceInProducesSilenceOut' (compiling source file ..\..\Source\PluginEditor.cpp)
 ..\..\Source\PluginProcessor.cpp(203): warning C4996: 'juce::AudioProcessor::getNumInputChannels': was declared deprecated
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
 ..\..\Source\PluginProcessor.cpp(197): warning C4100: 'samplesPerBlock': unreferenced formal parameter
 ..\..\Source\PluginProcessor.cpp(231): warning C4996: 'juce::AudioProcessor::getNumInputChannels': was declared deprecated
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(934): note: see declaration of 'juce::AudioProcessor::getNumInputChannels'
 ..\..\Source\PluginProcessor.cpp(232): warning C4996: 'juce::AudioProcessor::getNumOutputChannels': was declared deprecated
-  c:\users\chest\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(935): note: see declaration of 'juce::AudioProcessor::getNumOutputChannels'
+  c:\juce\modules\juce_audio_processors\processors/juce_AudioProcessor.h(935): note: see declaration of 'juce::AudioProcessor::getNumOutputChannels'
 ..\..\Source\PluginProcessor.cpp(228): warning C4100: 'midiMessages': unreferenced formal parameter
 ..\..\Source\PluginProcessor.cpp(309): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  juce_audio_formats.cpp
+..\..\Source\PluginProcessor.cpp(320): error C2660: 'ParametricEQFilter::makeParametric': function does not take 3 arguments
   juce_audio_plugin_client_utils.cpp
   juce_audio_plugin_client_VST2.cpp
   juce_audio_processors.cpp
@@ -54,7 +73,3 @@ c:\users\chest\documents\independant study\audio_effects_textbook_code-04e171d2a
   juce_gui_basics.cpp
   juce_gui_extra.cpp
   juce_opengl.cpp
-     Creating library C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Release\parametriceq.lib and object C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Release\parametriceq.exp
-  Generating code
-  Finished generating code
-  parametriceq.vcxproj -> C:\Users\chest\Documents\Independant Study\audio_effects_textbook_code-04e171d2a747\effects\parametriceq\Builds\VisualStudio2015\Release\parametriceq.dll

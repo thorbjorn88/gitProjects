@@ -1,4 +1,4 @@
-function [y,B,A] = bassman(low, mid, top, x)
+function [y,B,A] = bassman(low, mid, top, x,fs)
 % function [y,B0,B1,B2,B3,A0,A1,A2,A3] = bassman(low, mid, top, x)
 % Authors: Välimäki, Bilbao, Smith, Abel, Pakarinen, Berners
 %
@@ -15,7 +15,7 @@ function [y,B,A] = bassman(low, mid, top, x)
 % for commercial applications without further permission.
 %--------------------------------------------------------------------------
 
-fs = 48000;  % Sample rate
+%fs = 48000;  % Sample rate
 C1 = 0.25*10^-9;C2 = 20*10^-9;C3 = 20*10^-9;  % Component values
 R1 = 250000;R2 = 1000000;R3 = 25000;R4 = 56000;  % Component values
 % Analog transfer function coefficients:

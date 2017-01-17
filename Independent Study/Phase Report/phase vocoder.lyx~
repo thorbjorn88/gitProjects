@@ -1,0 +1,191 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Phase Vocoder 
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Most audio effects are performed in the time domain.
+ This report focuses on a group of audio effects which are performed in
+ the frequency domain.
+ The phase vocoder is a term used to describe these audio effects.
+ The phase vocoder process consists of the following steps.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Select the first N samples of the input signal which may have arbitrary
+ length.
+ These N samples are the first frame.
+\end_layout
+
+\begin_layout Enumerate
+Multiply the fram by a window function of length N.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Apply a fast fourier transform (FFT) of length M≥N to the windowed signal.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Perform the particular phase vocoder effect to frequency domain signal.
+\end_layout
+
+\begin_layout Enumerate
+Perform an inverse fast fourier transform IFFT on the processed frequency
+ domain signal.
+\end_layout
+
+\begin_layout Enumerate
+Add the M output samples to the output buffer.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Hop to the next frame by hop size H which is typically less than N as the
+ overlap add method is uses to stitch the frames into one uninterupted signal.
+\end_layout
+
+\begin_layout Standard
+The windowing, the FFT, IFFT, and overlap add method are not covered in
+ detail in this report.
+ The focus will be on effects that can be performed using the phase vocoder
+ technique.
+ In particular robatization, whisperization, and pitch shifting will be
+ discussed.
+ 
+\end_layout
+
+\begin_layout Section*
+Robotization and Whisperization
+\end_layout
+
+\begin_layout Standard
+Robotization and whisperization are instructive, if not musical, effects.
+ Both these effects are intended to operate on a voice and operate by modifying
+ the phase in each bin of the frequency domain signal.
+\end_layout
+
+\begin_layout Standard
+Robotization gets its name from the monotone robot like sound it results
+ in.
+ In step 4 of the above procedure the phase in each bin is set to zero while
+ the magnitude is left alone.
+ Since magnitude is unchanged, the overall shape of the spectrum is also
+ unchanged, thus the vocal formants are preserved and the voice is still
+ inteligible.
+ However, by setting the phase in each bin to zero each frequency component
+ will restart from zero phase with each frame rather than having a smooth
+ continuous transition between frames.
+ The result is a constant pitch related to the hop size between frames where
+ 
+\begin_inset Formula $f_{robot}=f_{s}/H$
+\end_inset
+
+ where fs is the sample rate and H is the hopsize.
+ The quality of the effect is also dependent on the window size.
+ For longer windows the resetting of phase is less frequent hence the effect
+ is less noticable, and with very short windows the clarity of the output
+ is reduced making the voice hard to understand.
+ A medium sized window on the order of 256-1024 samples yields the best
+ results.
+ 
+\end_layout
+
+\begin_layout Standard
+While robotization attempts to regulate the pitch of a voice, whisperization
+ attempts to remove any sense of pitch at all.
+ Whisperization is implemented in almost the same way as robotization but
+ the phase is set to a random value between 0 and 2π.
+ A random phase is selected for each bin in the frame resulting in the loss
+ of any sense of periodicity.
+ Again the magnitude is unaffected in order to preserve vocal formants.
+ For whiserpization shorter frames on the order of 64-256 samples work best.
+ 
+\end_layout
+
+\begin_layout Standard
+Because both robotization and whisperization take advantage of artifacts
+ of the phase vocoder process the constant overlap-add criteron for choosing
+ the hop size in relation to the window size is not important.
+ 
+\end_layout
+
+\end_body
+\end_document

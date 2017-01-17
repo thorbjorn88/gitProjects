@@ -16,7 +16,7 @@
 A continuous wave radar in which a single microwave oscillator serves as both
 the transmitter and local oscillator (LO) is, generally speaking, a homodyne radar.
 Frequency modulated continuous waveform (FMCW) radar systems often leverage a 
-homodyne architecture. In FMCW homodyne radar the continuous wave signal is modulated
+homodyne architecture. In FMCW homodyne radar, the continuous wave signal is modulated
 to create a linear chirp which is transmitted via antenna toward a target. The return
 echo signal, which is delayed in time, is mixed with the LO signal. The result is a signal 
 which is comprised of a linearly increasing chirp signal, which is actively filtered out, and 
@@ -42,10 +42,10 @@ oscillator signal and detected by a balanced photodetector.
 An FFT is then performed on the detected signal to determine detected range
 and speed.
 \cite{adany09}.
-This scheme is implemented NASA's Morpheus test vehicle in order to demonstrate
+This scheme was tested on NASA's Morpheus test vehicle in order to demonstrate
 its utility as a potential instrument for planetary landing missions.
 \cite{amz12,amz12p2,amz12fiber,amz16coherent}.
-Because of its use by NASA the simplified homodyne detection scheme has
+Because of its use by NASA, the simplified homodyne detection scheme has
 been selected as the basis of the Doppler lidar simulation in LadarSIM.
 
 \section{Simplified Homodyne Performance}
@@ -63,7 +63,7 @@ are particularly interesting because they include a return spectrum from
 the 370m experiment which will be useful in comparing to simulated spectra.
 The experiments of Adany et al.
 fall short in that the targets all had relatively good reflectivity and
-an approximately 90 degree angle incidence therefore there is little to
+an approximately 90 degree angle incidence; therefore, there is little to
 be learned about spectra resulting from non-ideal conditions.
 The experiments performed by NASA accurately mimic real world circumstances
 but no data on the resulting spectra is provided and no information on
@@ -76,16 +76,16 @@ characteristics as well as improving detection algorithms for Doppler lidar.
 \section{Spectrum Analysis Methods}
 A key step in the detection of FMCW lidar or radar is obtaining the frequency spectrum 
 of the returned signal. This is typically done with an FFT. Resolution of range and speed
-is inextricably tied to the resolution in frequency domain. Hence obtaining many samples
+is inextricably tied to the resolution in frequency domain. Hence, obtaining many samples
 of the returned signal and performing a large FFT on that signal allows for good 
-resolution. While it is necessary that the FFT be large only a relatively small 
+resolution. While it is necessary that the FFT be large, only a relatively small 
 number of the bins will contain peaks of the return signal. In order to reduce computational
 complexity and potentially increase performance, alternative methods can be used to obtain 
 the return spectrum. Al-Qudsi et al. demonstrate 
 how a Zoom FFT (ZFFT) can be used to significantly decrease the computational complexity
-fo FMCW radar. The ZFFT basically works by determining what portion of the total signal
+fo FMCW radar. The ZFFT works by determining what portion of the total signal
 is of interest then filtering the signal to isolate the signal of interest so that a smaller
-FFT can be performed \cite{Al-QudsiZoomfft}. A second approach is the Chirp Z-transform. In short 
+FFT can be performed \cite{Al-QudsiZoomfft}. A second approach is the Chirp Z-transform. In short, 
 the Chirp Z-transform differs from the FFT in that the spacing of frequency bins does not need
 to be uniform. Using the Chirp Z-transform frequency bins can be placed densely where high
 resolution is required and sparsely where it is not, potentially resulting in better resolution
@@ -97,7 +97,7 @@ of detection and false alarm rate. Probability of detection describes the probab
 will not be missed and the probability of false alarm describes the probability that something will be
 detected which is not part of the true return signal. Both of these phenomena are cause by noise in the signal
 either pulling a returned signal below the detection threshold or simply noise peaking above the detection 
-threshold. In order to simulate this behavior it is necessary to simulate the noise in the bins of the FFT. Mark A. Richards
-provides an in depth derivation of this \cite{richards2007dftnoise}. Wang et al. also examine the effects
+threshold. In order to simulate this behavior, it is necessary to simulate the noise in the bins of the FFT. Mark A. Richards
+provides an in-depth derivation of this \cite{richards2007dftnoise}. Wang et al. also examine the effects
 of noise on an FMCW radar's performance along with picket fence effect and derive the detection probability
 and false alarm probability as well as propose an improved threshold detection method \cite{wangThresh}. 

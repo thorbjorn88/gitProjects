@@ -1,9 +1,9 @@
-function [b,a] = threeBand(bass,mid,treb)
+function [b,a] = threeBand(bass,mid,treb,fs)
 bassBand = bass*141.111+33.8889;
 midGain = .25*mid + .1;
-[bb,ab] = highPass(bassBand);
-[bm,am] = notchPeak(midGain,13872,1700);
-[bt,at] = highShelf(treb,534.76+1700/2);
+[bb,ab] = highPass(bassBand,fs);
+[bm,am] = notchPeak(midGain,13872,1700,fs);
+[bt,at] = highShelf(treb,534.76+1700/2,fs);
 b = conv(conv(bb,bm),bt);
 a = conv(conv(ab,am),at);
 sys = filt(b,a);figure();bode(sys);

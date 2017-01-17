@@ -16,24 +16,24 @@
 LadarSIM is a robust and realistic simulation tool which accurately simulates
 the real world behavior of a lidar system \cite{budgeLeishman,neilsenBudge}.
 LadarSIM works by first performing a geometric simulation on the scenario. 
-During this stage the of the simulation user specified beam scanning patters,
+During this stage of the simulation, user specified beam scanning patters,
 platform flight paths, and terrain are used to obtain the true measurements
 of range that a perfect lidar system would produce.
 The next stage of simulation, called the radiometry simulation, takes these
 true measurements and simulates the effects of transmission, environmental and 
 target interactions, receiver processes, and detection. Using the results of 
-this simulation a point cloud is created which represents the data the simulated
+this simulation, a point cloud is created which represents the data the simulated
 lidar would receive in the scenario. 
 
-In order to add a simulation of FMCW Doppler lidar to LadarSIM both
+In order to add a simulation of FMCW Doppler lidar to LadarSIM, both
 stages of this simulation process must be updated to different degrees. The 
 geometry simulation only needs to be modified to include the true velocity
-measurements in addition to range. On the other hand there is little overlap 
+measurements in addition to range. On the other hand, there is little overlap 
 between the process of simulating time of flight lidar and Doppler lidar. It is
 therefore expected that the bulk of the time in updating LadarSIM will be spent
 creating the simulation of the Doppler transceiver. 
 \section{Trade-off Study}
-The goals of area of research is to ascertain and demonstrate the effects
+The goal of this part of the proposed research is to ascertain and demonstrate the effects
 of particular parameters on the performance of a Doppler lidar system using
 the simulation to be developed.
 The parameters to be studied are laser transmission power, beam divergence,
@@ -50,21 +50,21 @@ these systems will be evaluated in a variety of scenarios by calculating and
 recording the probabilities of detection and false alarm. 
 
 \section{Scanning Pattern Experiments}
-NASA's current Doppler lidar instrument which was tested on the Morpheus test 
+NASA's current Doppler lidar instrument, which was tested on the Morpheus test 
 platform uses a fixed telescope that sends beams in 3 directions \cite{amz12,amz12fiber,amz12p2,amz16coherent}.
-The resulting scan patter is useful in that it provides 3 points per scan which can 
+The resulting scan pattern is useful because it provides 3 points per scan which can 
 be used to obtain attitude and velocity vectors relative to the terrain during landing.
-This is useful but has disadvantages such as the possibility that turbulence or 
-the landing vehicle swinging on a parachute may result in one or more beams not
-being directed toward the ground for some time which means there will not be sufficient
-data to obtain attitude and velocity vectors. There has been some interest on the 
+This is useful but has disadvantages. Three is the minimum number of points necessary 
+to obtain attitude and velocity vectors. This means that if one point is dropped for any reason
+it will not be possible to obtain those vectors. The angles between these points are also fixed.
+There has been some interest on the 
 part of NASA to investigate alternative telescope solutions which would allow for 
-flexible scanning patterns which could fix this and other problems with the current
+flexible scanning patterns potentially fixing these and other problems with the current
 system\cite{budge2016simulation}. It is possible that novel scanning patterns could
 provide better performance in obtaining attitude and velocity data during landing and
 potentially be used in terrain mapping or hazard avoidance. 
 
-Using the updated LadarSIM software the three point scanning pattern used by NASA as
+Using the updated LadarSIM software, the three point scanning pattern used by NASA as
 well as other novel scanning patterns will be simulated and compared to research how
 scanning patterns can improve the reliability of navigational data and explore what 
 roles Doppler lidar systems may potentially fill in future missions.  
