@@ -127,8 +127,8 @@ The windowing, the FFT, IFFT, and overlap add method are not covered in
  detail in this report.
  The focus will be on effects that can be performed using the phase vocoder
  technique.
- In particular robatization, whisperization, and pitch shifting will be
- discussed.
+ In particular robatization, whisperization, time scaling, and pitch shifting
+ will be discussed.
  
 \end_layout
 
@@ -185,6 +185,71 @@ Because both robotization and whisperization take advantage of artifacts
  of the phase vocoder process the constant overlap-add criteron for choosing
  the hop size in relation to the window size is not important.
  
+\end_layout
+
+\begin_layout Section*
+Time Scaling and Pitch Shifting
+\end_layout
+
+\begin_layout Standard
+A useful application of the phase vocoder is scaling time or shifitng pitch
+ while leaving the other unaffected.
+ First we will look at time scaling.
+ In order to perform time scaling without affecting pitch the relationship
+ Φ=ωt or phase = frequency multiplied with time.
+ By allowing phase to be adjust time can be changed while leaving frequency
+ uneffected.
+ For time scaling the first 3 steps of the phase vocoder are performed as
+ usual but steps 5 through 7 are modified to accomodate the change in time.
+ A stretching ration R relates the hop size for the analysis steps (1-3)
+ and the synthesis steps (5-7) denoted as h
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ and h
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+
+ respectively such that 
+\begin_inset Formula $h_{s}=Rh_{a}$
+\end_inset
+
+.
+ The change in frequency and amplitude for each bin is calculted by the
+ following equations.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Δ}Φ_{i}(n,k)=\frac{ω_{k}h_{a}+arg(Φ_{d}(n,k))}{h_{a}}ωΔ
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Δ}\text{A}_{i}(n,k)=\frac{A_{i}(n,k)-A_{i}(n-1,k)}{h_{a}}ω\text{Δ}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

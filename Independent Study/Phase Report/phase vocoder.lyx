@@ -74,6 +74,17 @@
 The Phase Vocoder 
 \end_layout
 
+\begin_layout Standard
+This paper follows the development of Reiss and McPherson 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section*
 Introduction
 \end_layout
@@ -94,12 +105,12 @@ Select the first N samples of the input signal which may have arbitrary
 \end_layout
 
 \begin_layout Enumerate
-Multiply the fram by a window function of length N.
+Multiply the frame by a window function of length N.
  
 \end_layout
 
 \begin_layout Enumerate
-Apply a fast fourier transform (FFT) of length M≥N to the windowed signal.
+Apply a fast Fourier transform (FFT) of length M≥N to the windowed signal.
  
 \end_layout
 
@@ -108,7 +119,7 @@ Perform the particular phase vocoder effect to frequency domain signal.
 \end_layout
 
 \begin_layout Enumerate
-Perform an inverse fast fourier transform IFFT on the processed frequency
+Perform an inverse fast Fourier transform IFFT on the processed frequency
  domain signal.
 \end_layout
 
@@ -119,7 +130,8 @@ Add the M output samples to the output buffer.
 
 \begin_layout Enumerate
 Hop to the next frame by hop size H which is typically less than N as the
- overlap add method is uses to stitch the frames into one uninterupted signal.
+ overlap add method is uses to stitch the frames into one uninterrupted
+ signal.
 \end_layout
 
 \begin_layout Standard
@@ -149,7 +161,7 @@ Robotization gets its name from the monotone robot like sound it results
  the magnitude is left alone.
  Since magnitude is unchanged, the overall shape of the spectrum is also
  unchanged, thus the vocal formants are preserved and the voice is still
- inteligible.
+ intelligible.
  However, by setting the phase in each bin to zero each frequency component
  will restart from zero phase with each frame rather than having a smooth
  continuous transition between frames.
@@ -158,10 +170,19 @@ Robotization gets its name from the monotone robot like sound it results
 \begin_inset Formula $f_{robot}=f_{s}/H$
 \end_inset
 
- where fs is the sample rate and H is the hopsize.
+ where f
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+
+ is the sample rate and H is the hop size.
  The quality of the effect is also dependent on the window size.
  For longer windows the resetting of phase is less frequent hence the effect
- is less noticable, and with very short windows the clarity of the output
+ is less noticeable, and with very short windows the clarity of the output
  is reduced making the voice hard to understand.
  A medium sized window on the order of 256-1024 samples yields the best
  results.
@@ -182,7 +203,7 @@ While robotization attempts to regulate the pitch of a voice, whisperization
 
 \begin_layout Standard
 Because both robotization and whisperization take advantage of artifacts
- of the phase vocoder process the constant overlap-add criteron for choosing
+ of the phase vocoder process the constant overlap-add criterion for choosing
  the hop size in relation to the window size is not important.
  
 \end_layout
@@ -192,15 +213,15 @@ Time Scaling and Pitch Shifting
 \end_layout
 
 \begin_layout Standard
-A useful application of the phase vocoder is scaling time or shifitng pitch
+A useful application of the phase vocoder is scaling time or shifting pitch
  while leaving the other unaffected.
  First we will look at time scaling.
  In order to perform time scaling without affecting pitch the relationship
  Φ=ωt or phase = frequency multiplied with time.
  By allowing phase to be adjust time can be changed while leaving frequency
- uneffected.
+ unaffected.
  For time scaling the first 3 steps of the phase vocoder are performed as
- usual but steps 5 through 7 are modified to accomodate the change in time.
+ usual but steps 5 through 7 are modified to accommodate the change in time.
  A stretching ration R relates the hop size for the analysis steps (1-3)
  and the synthesis steps (5-7) denoted as h
 \begin_inset script subscript
@@ -225,8 +246,20 @@ s
 \end_inset
 
 .
- The change in frequency and amplitude for each bin is calculted by the
+ The change in frequency and amplitude for each bin is calculated by the
  following equations.
+ These phase and amplitude increments are proportional to the instantaneous
+ frequency.
+ The variable h
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ is the hop size for the analysis portion of the algorithm.
  
 \end_layout
 
@@ -250,6 +283,140 @@ s
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+These phase and amplitude increment values will be used in the synthesis
+ part of the algorithm.
+ The phase for the re-synthesis stage can be calculated at each sample m
+ using
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+θ(m,k)=θ(m-1,k)+\text{Δ}\text{Φ}_{i}(n,k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The phase for the synthesis or output signal is incremented by the same
+ amount as was calculated above for analysis but for the synthesis hop size.
+ The same method cannot be used to scale the amplitude because it would
+ lead to serious artifacts.
+ Instead the increment is calculated using the synthesis hop size to ensure
+ that the amplitude will be the same at the beginning and end of the hops
+ in both synthesis and analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Δ}\text{A}_{is}(n,k)=\frac{\text{A}_{i}(n,k)-\text{A}_{i}(n-1,k)}{h_{s}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The amplitude over the synthesis hop is then calculated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{k}(m,k)=A_{k}(m-1,k)+\text{Δ}\text{A}_{ks}(n,k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sinusoidal components are then summed to synthesize the output which
+ has been scaled in time.
+ 
+\end_layout
+
+\begin_layout Standard
+Pitch shifting without changing the time of the signal can be used leveraging
+ the above algorithm for time scaling.
+ Suppose a time scaling factor of R is applied to each block of N samples
+ of input resulting in R∙N output samples.
+ If these samples were played at a sample rate of R∙f
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+
+the result would be a higher pitched version of the signal with the same
+ time duration.
+ In practice it doesn't make a lot of sense to have a different sample-rate
+ for input and output.
+ An alternative is to achieve a similar result using interpolation to fit
+ R∙N samples in the space of N.
+ 
+\end_layout
+
+\begin_layout Section*
+Phase Vocoder Artifacts
+\end_layout
+
+\begin_layout Standard
+The effects mentioned above often rely on linear interpolation.
+ This presents a problem because so many elements of music are non-linear.
+ Problems also arise with the distortion of phase relationships because
+ phase error is cumulative.
+ A note being struck can be considered a transient.
+ Transient smearing occurs when phase coherence is lost at a transient,
+ the result is transient smearing which softens the attack of the note and
+ gives it an unnatural sound.
+ A third problem is 
+\begin_inset Quotes eld
+\end_inset
+
+phasiness
+\begin_inset Quotes erd
+\end_inset
+
+ which adds a reverb-like quality to the sound.
+ 
+\end_layout
+
+\begin_layout Section*
+Conclusion
+\end_layout
+
+\begin_layout Standard
+The phase vocoder is a fairly simple yet powerful tool to manipulate frequency
+ components of an audio signal.
+ It is tempting initially to focus on the magnitude of a signal but it becomes
+ clear that the phase of the signal, and how it is affected, has huge implicatio
+ns on the quality of the overall effect.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Reiss, Joshua D., and Andrew McPherson.
+ Audio effects: theory, implementation and application.
+ CRC Press, 2014.
 \end_layout
 
 \end_body
