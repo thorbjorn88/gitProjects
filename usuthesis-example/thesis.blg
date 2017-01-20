@@ -1,8 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
-A level-1 auxiliary file: sample-chapter1.aux
-A level-1 auxiliary file: litreview.aux
-A level-1 auxiliary file: methods.aux
-A level-1 auxiliary file: conclusion.aux
+A level-1 auxiliary file: ladarSIMback.aux
+A level-1 auxiliary file: FMCWback.aux
 The style file: IEEEtran.bst
 Database file #1: myBib.bib
 Warning--entry type for "neilsenBudge" isn't style-file defined
@@ -13,7 +11,6 @@ Warning--entry type for "budgeLeishman" isn't style-file defined
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in brooker2009
-Warning--empty journal in amz16coherent
 
 Done.
-(There were 4 warnings)
+(There were 3 warnings)

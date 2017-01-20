@@ -1,14 +1,39 @@
 \chapter{Frequency Modulated Continuous Wave Detection}
 
 \section{FMCW Basics}
-Frequency Modulated Continuous Wave (FMCW) detection refers to a radar/lidar 
+The theory behind Frequency Modulated Continuous Wave (FMCW) detection will 
+now be explored following the development of Brooker\cite{brooker2009}.
+FMCW detection refers to a radar/lidar 
 system in which a continuous wave of known frequency is modulated in amplitude,
 transmitted, and the reflected signal is detected. A continuous wave radar in 
 which a single microwave oscillator serves as both
 the transmitter and local oscillator (LO) is, generally speaking, a homodyne radar.
 Frequency modulated continuous waveform (FMCW) radar systems often leverage a 
-homodyne architecture.
+homodyne architecture \cite{brooker2009}.
 
+An FMCW radar uses a continuous wave signal which is modulated in amplitude 
+over a range of frequencies creating a linear chirp. This chirped signal is 
+radiated to the target and an echo 
+returns after time $T_p$, which is the time it takes for the signal to reach the
+target and reflected energy to return to the antennae. The returned signal is mixed
+with the signal from the LO producing a beat signal at frequency $f_b$.  Figure~\ref{fig:doppShift}
+illustrates this process. 
+
+\begin{figure}
+	\begin{center}
+		\begin{tikzpicture}[every text node part/.style={align=center}]
+			\draw[thick,->] (1,1) -- (7,1) node[anchor=north] {Time};
+			\draw[thick,->] (1,1) -- (1,5) node[anchor=south] {Freq};
+			\draw (1,1) -- (5,5);
+			\draw[dashed] (2.5,1) -- (6.5,5);
+			\draw[dashed,<->] (4,2.6) -- (4,3.9) node[pos=0.5, anchor = east] {fb};
+			\draw[dashed,<->] (1,.8) -- (2.5,.8) node[pos=0.5, anchor = north] {Tp};
+			\draw[dashed,<->] (1,0) -- (5,0) node[pos=0.5, anchor = north] {Tb};
+		\end{tikzpicture}
+		\caption{Transmit and Receive Doppler Shift}
+		\label{fig:doppShift}
+	\end{center}
+\end{figure}
 
 
 
