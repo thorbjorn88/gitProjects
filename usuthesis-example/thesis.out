@@ -1,4 +1,11 @@
-\BOOKMARK [0][-]{chapter.1}{LadarSIM}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Frequency Modulated Continuous Wave Detection}{}% 2
-\BOOKMARK [1][-]{section.2.1}{FMCW Basics}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Simplified Homodyne Detection}{chapter.2}% 4
+\BOOKMARK [0][-]{chapter*.2}{LIST OF FIGURES}{}% 1
+\BOOKMARK [0][-]{chapter.1}{LadarSIM}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Frequency Modulated Continuous Wave Detection}{}% 3
+\BOOKMARK [1][-]{section.2.1}{FMCW Radar}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.1.1}{Basic Principles}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.2}{FMCW Detection}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.3}{Doppler Effect in FMCW}{section.2.1}% 7
+\BOOKMARK [1][-]{section.2.2}{FMCW Lidar Architecture}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.1}{Direct Detection}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.2}{Coherent Heterodyne Detection}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.3}{Homodyne Self-Chirped Detection}{section.2.2}% 11

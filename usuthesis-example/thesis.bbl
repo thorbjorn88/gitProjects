@@ -40,4 +40,20 @@ K.~D. Neilsen, S.~E. Budge, R.~T. Pack, R.~R. Fullmer, and T.~D. Cook, ``Design
 \bibitem{brooker2009}
 G.~Brooker, ``Introduction to sensors for ranging and imaging,'' 2009.
 
+\bibitem{adany09}
+P.~Adany, C.~Allen, and R.~Hui, ``Chirped lidar using simplified homodyne
+  detection,'' \emph{Journal of Lightwave Technology}, vol.~27, no.~16, pp.
+  3351--3357, Aug 2009.
+
+\bibitem{adany2007simplified}
+P.~Adany, \emph{Simplified homodyne detection for FM chirped lidar}.\hskip 1em
+  plus 0.5em minus 0.4em\relax ProQuest, 2007.
+
+\bibitem{1319mmPerf}
+C.~Allen, Y.~Cobanoglu, S.~K. Chong, and S.~Gogineni, ``Performance of a 1319
+  nm laser radar using rf pulse compression,'' in \emph{IGARSS 2001. Scanning
+  the Present and Resolving the Future. Proceedings. IEEE 2001 International
+  Geoscience and Remote Sensing Symposium (Cat. No.01CH37217)}, vol.~3, 2001,
+  pp. 997--999 vol.3.
+
 \end{thebibliography}
