@@ -225,12 +225,12 @@ Expressions for $f_r$ and $f_d$ can be obtained by averaging and differencing eq
 
  \begin{equation}
  \label{eq:fr}
- f_r = \frac{f_{b(up)}+f_{b(down)}}{2},
+ f_r = \frac{f_{b(Up)}-f_{b(Down)}}{2},
  \end{equation}
 
  \begin{equation}
 \label{eq:fd}
-f_d = \frac{f_{b(up)}-f_{b(down)}{2}.
+f_d = \frac{f_{b(Up)}+f_{b(Down)}}{2}.
 \end{equation}
 
 The sign of $f_d$ is determined by the direction of motion. If the range is getting smaller $f_d$ will be positive 
@@ -276,17 +276,77 @@ and if the range is getting larger $f_d$ will be negative.
 	\end{center}
 \end{figure}
 
+\section{FMCW Lidar Processing}
+The two main differences between FMCW lidar and radar are the modulation frequencies and the wavelength of the 
+radiation. One consequence of this is that the doppler frequency is usually higher than the beat frequency, 
+leading to some minor modifications to the equations in section \ref{sec:FMCWRadar}. The most importantly the 
+relationship between beat frequency of the up-chirp with the doppler frequency is better expressed as:
+
+\begin{equation}
+\label{eq:fbUpLaser}
+f_{bUp}=f_d - f_b.
+\end{equation}
+
+In a practical FMCW lidar system it is common to add a period of constant frequency between up and down chirps in
+the chirp process illustrated in figures \ref{fig:UpDownChirp}. Doing this gives a 
+direct measurement of the Doppler frequency. This modified chirp process is shown in figure \ref{fig:UpDownFlatChirp}. 
+
+\begin{figure}
+	\begin{center}
+		\begin{tikzpicture}[scale = .6,every text node part/.style={align=center}]
+		\draw[thick,->] (1,6) -- (24,6) node[anchor=north,scale=0.7] {Time};
+		\draw[thick,->] (1,6) -- (1,12) node[pos = 0.5,above,scale=0.7,rotate=90] {Frequency};
+		\draw[thick,->] (1,1) -- (24,1) node[anchor=north,scale=0.7] {Time};
+		\draw[thick,->] (1,-2.5) -- (1,5) node[pos = 0.5,above,scale=0.7,rotate=90] {Beat Frequency};
+		%transmit
+		\draw (1,7) -- (4,10) -- (7,10) -- (10,7) -- (13,10) -- (16,10) -- (19,7) -- (22,10);
+		\draw[dashed] (1,9.5)-- (2,7.5) -- (5,10.5) -- (8,10.5) -- (11,7.5) -- (14,10.5) -- (17,10.5) -- (20,7.5) -- (22,9.5);;
+		
+		%beat
+		\draw (1,4) -- (2,-1) -- (4,-1)  -- (5,2) -- (7,2) -- (8,4) -- (10,4) -- (11,-1) -- (13,-1)
+		-- (14,2) -- (16,2) -- (17,4) -- (19,4) -- (20,-1) -- (22,-1);
+		
+		\draw (2,-1) -- (4,-1) node[pos = 0.5,below,scale=0.7] {Up-chirp Freq.};
+		\draw (5,2) -- (7,2) node[pos = 0.5,above,scale=0.7] {Doppler Freq.};
+		\draw (8,4) -- (10,4) node[pos = 0.5,above,scale=0.7] {Up-chirp Freq.};
+		
+		\end{tikzpicture}
+		\caption{Doppler Effect on FMCW lidar with up-chirp, steady, and down-chirp sections.}
+		\label{fig:UpDownFlatChirp}
+	\end{center}
+\end{figure}
+
+From the process process illustrated in figure \ref{fig:UpDownFlatChirp} the system obtains three measured frequencies:
+$f_{b(Up)}$ the up-chirp frequency, $f_d$ the Doppler frequency, and $f_{b(Down)}$ the down-chirp frequency. The range
+information is encoded in the beat frequency $f_r$ which is obtained from $f_{b(Up)}$ and $f_{b(Down)}$ by eq \ref{eq:fr},
+substituting this result into \ref{eq:FMCWrange} yields:
+
+\begin{equation}
+\label{eq:FMCWchirpRange}
+R=\frac{T_bc}{2B}\frac{f_{b(Up)}-f_{b(Down)}}{2}.
+\end{equation}
+
+Where B is the chirp bandwidth. Similarly the velocity measurement can be obtained using the three available frequencies.
+One option is to use the measured 
+Doppler frequency directly by substituting into eq \ref{eq:dop2} and solving for the velocity. The problem here is that the 
+sign of $f_d$ determines the direction of motion and the sign of $f_d$ is not preserved in the FFT process. A better option 
+is to use \ref{eq:fd} to get $f_d$ and plug the result into \ref{eq:dop2} and solve for velocity resulting in:
+
+\begin{equation}
+\label{eq:FMCWchirpVel}
+V = \frac{\lambda}{2}\frac{f_{b(Up)}+f_{b(Down)}}{2}.
+\end{equation}
 
 
-\section{FMCW Lidar}
+
+
+
+\section{FMCW Lidar Architecture}
 \label{sec:FMCWLidar}
-
-The above section explored the basic functionality of FMCW radar. These basic concepts can be used
-to develop an FMCW lidar system. This change leads to very few alterations to the equations in section
-\ref{sec:FMCWRadar}, most notably that in many lidar systems $f_d$ will be greater than $f_b$. 
-In this section a number of detection architectures for FMCW lidar will be examined. Adany et al. provide
+The above section explored the basic functionality of FMCW radar then showed which changes must be made to the equations
+for detection. In this section a number of detection architectures for FMCW lidar will be examined. Adany et al. provide
 and analysis of direct detection, heterodyne detection, as well as their proposed simplified homodyne 
-detection \cite{adany09,adany2007simplified} which will serve as the primary source of information in this section. 
+detection \cite{adany09,adany2007simplified}, which will serve as the primary source of information in this section.
 
 \subsection{Direct Detection Architecture}
 In an FMCW direct detection scheme, the signal from the modulation waveform generator is split. Part of the signal
@@ -373,11 +433,9 @@ to the theoretical SNR in eq \ref{eq:heteroSNR} than the practical SNR of the co
 	\label{fig:homodyneBlock}
 \end{figure}
 
-\subsection{FMCW Lidar Detection}
-The two main differences between FMCW lidar and radar are the modulation frequencies and the wavelength of the 
-radiation. 
-
-
+This architecture is popular for its performance and simplicity. Because it is being used by NASA for planetary 
+landing missions \cite{amz12,amz12fiber,amz12p2,amz16coherent,pierrottet2009flight,pierrottet2011navigation}, it
+has been selected as the basis for the simulation being reported on in this thesis. 
 
 
 

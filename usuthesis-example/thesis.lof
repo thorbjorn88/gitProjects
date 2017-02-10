@@ -1,6 +1,8 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Transmit and Receive Doppler Shift}}{3}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Spectrum of the truncated sinusoidal signal output by an FMCW radar.}}{5}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Doppler Effect on FMCW radar.}}{8}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Direct detection architecture}}{9}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Coherent heterodyne detection architecture}}{10}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Homodyne self-chirped detection architecture}}{11}{figure.2.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Transmit and Receive Doppler Shift}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Spectrum of the truncated sinusoidal signal output by an FMCW radar.}}{6}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Doppler Effect on FMCW radar.}}{9}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Doppler Effect on FMCW lidar with up-chirp, steady, and down-chirp sections.}}{9}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Direct detection architecture}}{11}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Coherent heterodyne detection architecture}}{13}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Homodyne self-chirped detection architecture}}{14}{figure.2.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Main GUI for running LadarSIM.}}{16}{figure.3.1}

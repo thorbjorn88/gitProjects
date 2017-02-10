@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.29)  6 FEB 2017 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.29)  10 FEB 2017 13:47
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -769,7 +769,7 @@ Package: doi 2007/07/24 handle doi numbers
 LaTeX Warning: Unused global option(s):
     [thesis].
 
-(thesis.aux (ladarSIMback.aux) (FMCWback.aux))
+(thesis.aux (thesisIntro.aux) (FMCWback.aux) (ladarSIMwork.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -897,66 +897,82 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [3
 
 ]
-\openout2 = `ladarSIMback.aux'.
+\openout2 = `thesisIntro.aux'.
 
- (ladarSIMback.tex
+ (thesisIntro.tex
 CHAPTER 1.
-) [1
+[1
 
 
-]
+]) [2]
 \openout2 = `FMCWback.aux'.
 
  (FMCWback.tex
 CHAPTER 2.
-[2
+[3
 
 
 
-] [3] [4] [5] [6]
+] [4] [5] [6] [7]
 Overfull \hbox (16.57292pt too wide) in paragraph at lines 273--274
  [] 
  []
 
-[7] <figs/direct.png, id=167, 525.46312pt x 318.43968pt>
+Missing character: There is no ; in font nullfont!
+[8] [9] [10] <figs/direct.png, id=224, 525.46312pt x 318.43968pt>
 File: figs/direct.png Graphic file (type png)
- <use figs/direct.png>
-Package pdftex.def Info: figs/direct.png used on input line 314.
-(pdftex.def)             Requested size: 346.89734pt x 210.23401pt.
 
-[8] [9 <./figs/direct.png>]
-<figs/heterodyne.png, id=182, 514.17094pt x 361.35pt>
+<use figs/direct.png>
+Package pdftex.def Info: figs/direct.png used on input line 374.
+(pdftex.def)             Requested size: 346.89734pt x 210.23401pt.
+ [11 <./figs/direct.png>]
+<figs/heterodyne.png, id=235, 514.17094pt x 361.35pt>
 File: figs/heterodyne.png Graphic file (type png)
 
 <use figs/heterodyne.png>
-Package pdftex.def Info: figs/heterodyne.png used on input line 348.
+Package pdftex.def Info: figs/heterodyne.png used on input line 408.
 (pdftex.def)             Requested size: 346.89734pt x 243.79596pt.
- [10 <./figs/heterodyne.png>]
-<figs/simpleHomodyne.png, id=192, 531.48563pt x 298.11375pt>
+ [12]
+<figs/simpleHomodyne.png, id=243, 531.48563pt x 298.11375pt>
 File: figs/simpleHomodyne.png Graphic file (type png)
 
 <use figs/simpleHomodyne.png>
-Package pdftex.def Info: figs/simpleHomodyne.png used on input line 370.
+Package pdftex.def Info: figs/simpleHomodyne.png used on input line 430.
 (pdftex.def)             Requested size: 346.89734pt x 194.58133pt.
-) [11 <./figs/simpleHomodyne.png>] (thesis.bbl)
-[12
+ [13 <./figs/heterodyne.png>]) [14 <./figs/simpleHomodyne.png>]
+\openout2 = `ladarSIMwork.aux'.
+
+ (ladarSIMwork.tex
+CHAPTER 3.
+<figs/LadarSIM.png, id=260, 700.86844pt x 487.8225pt>
+File: figs/LadarSIM.png Graphic file (type png)
+ <use figs/LadarSIM.png>
+Package pdftex.def Info: figs/LadarSIM.png used on input line 32.
+(pdftex.def)             Requested size: 346.89734pt x 241.45427pt.
+)
+[15
 
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
- (thesis.aux (ladarSIMback.aux) (FMCWback.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+
+] [16 <./figs/LadarSIM.png>] (thesis.bbl [17
+
+
+]) [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+ (thesis.aux
+(thesisIntro.aux) (FMCWback.aux) (ladarSIMwork.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F12914F12CE55AEA7A9E1C6FBF68CC59;758.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+(rerunfilecheck)             Checksum: 4ACF17FD525B0756050E42914C4896CD;1116.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
  ) 
 Here is how much of TeX's memory you used:
- 34495 strings out of 493334
- 886394 string characters out of 3139225
- 1165377 words of memory out of 3000000
- 37434 multiletter control sequences out of 15000+200000
+ 34547 strings out of 493334
+ 887133 string characters out of 3139225
+ 1168415 words of memory out of 3000000
+ 37456 multiletter control sequences out of 15000+200000
  8942 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,96p,773b,769s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -968,9 +984,9 @@ ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmti10.pfb>
-Output written on thesis.pdf (15 pages, 256038 bytes).
+Output written on thesis.pdf (21 pages, 337699 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
