@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.29)  10 FEB 2017 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.29)  17 FEB 2017 13:59
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -914,65 +914,101 @@ CHAPTER 2.
 
 
 ] [4] [5] [6] [7]
-Overfull \hbox (16.57292pt too wide) in paragraph at lines 273--274
+Overfull \hbox (16.57292pt too wide) in paragraph at lines 248--249
  [] 
  []
 
 Missing character: There is no ; in font nullfont!
-[8] [9] [10] <figs/direct.png, id=224, 525.46312pt x 318.43968pt>
+[8] [9] [10] <figs/direct.png, id=246, 525.46312pt x 318.43968pt>
 File: figs/direct.png Graphic file (type png)
 
 <use figs/direct.png>
-Package pdftex.def Info: figs/direct.png used on input line 374.
+Package pdftex.def Info: figs/direct.png used on input line 349.
 (pdftex.def)             Requested size: 346.89734pt x 210.23401pt.
  [11 <./figs/direct.png>]
-<figs/heterodyne.png, id=235, 514.17094pt x 361.35pt>
+<figs/heterodyne.png, id=255, 514.17094pt x 361.35pt>
 File: figs/heterodyne.png Graphic file (type png)
 
 <use figs/heterodyne.png>
-Package pdftex.def Info: figs/heterodyne.png used on input line 408.
+Package pdftex.def Info: figs/heterodyne.png used on input line 383.
 (pdftex.def)             Requested size: 346.89734pt x 243.79596pt.
- [12]
-<figs/simpleHomodyne.png, id=243, 531.48563pt x 298.11375pt>
+ [12 <./figs/heterodyne.png>]
+<figs/simpleHomodyne.png, id=264, 531.48563pt x 298.11375pt>
 File: figs/simpleHomodyne.png Graphic file (type png)
 
 <use figs/simpleHomodyne.png>
-Package pdftex.def Info: figs/simpleHomodyne.png used on input line 430.
+Package pdftex.def Info: figs/simpleHomodyne.png used on input line 406.
 (pdftex.def)             Requested size: 346.89734pt x 194.58133pt.
- [13 <./figs/heterodyne.png>]) [14 <./figs/simpleHomodyne.png>]
+ [13 <./figs/simpleHomodyne.png>]) [14]
 \openout2 = `ladarSIMwork.aux'.
 
- (ladarSIMwork.tex
+
+(ladarSIMwork.tex
 CHAPTER 3.
-<figs/LadarSIM.png, id=260, 700.86844pt x 487.8225pt>
+<figs/LadarSIM.png, id=280, 700.86844pt x 487.8225pt>
 File: figs/LadarSIM.png Graphic file (type png)
  <use figs/LadarSIM.png>
-Package pdftex.def Info: figs/LadarSIM.png used on input line 32.
+Package pdftex.def Info: figs/LadarSIM.png used on input line 18.
 (pdftex.def)             Requested size: 346.89734pt x 241.45427pt.
-)
+
 [15
 
 
 
-] [16 <./figs/LadarSIM.png>] (thesis.bbl [17
+ <./figs/LadarSIM.png>]
+<figs/radParamGUI.png, id=287, 179.2296pt x 344.0052pt>
+File: figs/radParamGUI.png Graphic file (type png)
+
+<use figs/radParamGUI.png>
+Package pdftex.def Info: figs/radParamGUI.png used on input line 56.
+(pdftex.def)             Requested size: 216.81001pt x 416.15833pt.
+ [16]
+<figs/opticsGUI.png, id=294, 281.55188pt x 279.29344pt>
+File: figs/opticsGUI.png Graphic file (type png)
+
+<use figs/opticsGUI.png>
+Package pdftex.def Info: figs/opticsGUI.png used on input line 67.
+(pdftex.def)             Requested size: 260.17465pt x 258.10373pt.
+ [17 <./figs/radParamGUI.png>]
+<figs/dopTxGUI.png, id=301, 417.81094pt x 485.56406pt>
+File: figs/dopTxGUI.png Graphic file (type png)
+ <use figs/dopTxGUI.png>
+Package pdftex.def Info: figs/dopTxGUI.png used on input line 80.
+(pdftex.def)             Requested size: 260.17465pt x 302.38023pt.
+
+<figs/RxParamGUI.png, id=303, 613.54219pt x 481.8pt>
+File: figs/RxParamGUI.png Graphic file (type png)
+ <use figs/RxParamGUI.png>
+Package pdftex.def Info: figs/RxParamGUI.png used on input line 90.
+(pdftex.def)             Requested size: 346.89734pt x 272.40865pt.
+
+[18 <./figs/opticsGUI.png>]
+<figs/rangeParamGUI.png, id=310, 255.93361pt x 343.96173pt>
+File: figs/rangeParamGUI.png Graphic file (type png)
+
+<use figs/rangeParamGUI.png>
+Package pdftex.def Info: figs/rangeParamGUI.png used on input line 102.
+(pdftex.def)             Requested size: 346.89734pt x 466.25972pt.
+) [19 <./figs/dopTxGUI.png>] [20 <./figs/RxParamGUI.png>] [21 <./figs/rangePara
+mGUI.png>] (thesis.bbl [22
 
 
-]) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+]) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
  (thesis.aux
 (thesisIntro.aux) (FMCWback.aux) (ladarSIMwork.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4ACF17FD525B0756050E42914C4896CD;1116.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
+(rerunfilecheck)             Checksum: B4FF67C56600FC01512A3100F3D8438C;1278.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
  ) 
 Here is how much of TeX's memory you used:
- 34547 strings out of 493334
- 887133 string characters out of 3139225
- 1168415 words of memory out of 3000000
- 37456 multiletter control sequences out of 15000+200000
+ 34592 strings out of 493334
+ 887905 string characters out of 3139225
+ 1169754 words of memory out of 3000000
+ 37484 multiletter control sequences out of 15000+200000
  8942 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,96p,773b,769s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -984,9 +1020,9 @@ ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmti10.pfb>
-Output written on thesis.pdf (21 pages, 337699 bytes).
+Output written on thesis.pdf (26 pages, 652992 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 391 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

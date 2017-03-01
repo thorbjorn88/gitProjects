@@ -3,6 +3,11 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Doppler Effect on FMCW radar.}}{9}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Doppler Effect on FMCW lidar with up-chirp, steady, and down-chirp sections.}}{9}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Direct detection architecture}}{11}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Coherent heterodyne detection architecture}}{13}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Homodyne self-chirped detection architecture}}{14}{figure.2.7}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Main GUI for running LadarSIM.}}{16}{figure.3.1}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Coherent heterodyne detection architecture}}{12}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Homodyne self-chirped detection architecture}}{13}{figure.2.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Main GUI for running LadarSIM.}}{15}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Radiometry parameter GUI.}}{17}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Optical parameters GUI.}}{18}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Transmitter parameters GUI.}}{19}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Receiver parameters GUI.}}{20}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Range processing parameters GUI.}}{21}{figure.3.6}

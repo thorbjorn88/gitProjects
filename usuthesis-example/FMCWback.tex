@@ -48,40 +48,31 @@ It is clear that the distance to the target can be calculated with $T_p$. In an 
 $T_p$ is determined by measuring the beat frequency $f_b$. To do this a portion of the signal
 produced by the LO is mixed with the returned echo producing $f_b$. A signal chirped in frequency
 can be expressed as
-
 \begin{equation}
 \label{eq:chirpSig}
 v_{fm}(t)=A_c cos[\omega_ct+\frac{A_b}{2} t^2].
 \end{equation}
-
 Where $A_b$ is a constant of proportionality between the change in frequency over the chirp or chirp slope, $\omega_b$,
 and the chirp time; such that $\omega_b=A_bt$. The mixture of the transmitted and received signals can be 
 expressed as
-
 \begin{equation}
 \label{eq:mixSig}
 v_{fm}(t-T_p)v_{fm}(t)=A_c^2 cos[\omega_c t +\frac{A_b}{2}t^2]cos[\omega_c(t-T_p)+\frac{A_b}{2} (t-T_p)^2].
 \end{equation}
-
 This simplifies to 
-
 \begin{equation}
 \label{eq:mixSigOut}
 v_{out}(t)=A_c^2 (cos[(2\omega_c-A_bT_p)t+A_bt^2+(\frac{A_b}{2}T_p^2-\omega_cT_p)]+cos[A_bT_pt+(\omega_cT_p-\frac{A_b}{2}T_p^2)]).
 \end{equation}
-
 It is desirable to isolate the second term in Eq~\ref{eq:mixSigOut} because it is the the beat signal. 
 The first cosine term is an FM chirp at about twice the carrier frequency and is in most cases 
 conveniently filtered out because it is above the cutoff frequency of the receiver components.
 To obtain the $f_b$ from the beat signal the phase term is differentiated with time, 
-
 \begin{equation}
 \label{eq:phaseDiff}
 f_b=\frac{1}{2\pi}\frac{d}{dt}[A_bT_bt+(\omega_cT_p-\frac{A_b}{2}T_p^2)],
 \end{equation}
-
-resulting with
-
+resulting in
 \begin{equation}
 \label{eq:fb}
 f_b=(\frac{A_b}{2\pi})T_p.
@@ -126,29 +117,22 @@ region of width 1/$T_b$ centered on $f_b$, as shown in figure \ref{fig:trunkSpec
 The chirp bandwidth is the total change in frequency for the chirp, $\Delta$$f$. Clearly
 the slope of the chirp is the chirp bandwidth divided by the chirp time, $\Delta$$f$/$T_b$.
 Eq \ref{eq:fb} can then be restated
-
 \begin{equation}
 	\label{eq:fb_alt}
 	f_b=(\frac{A_b}{2\pi})T_p=\frac{\Delta f}{T_b}T_p.
 \end{equation}
-
 Intuitively $T_p$ is the round trip time from the antennae to the target and back
-
 \begin{equation}
 	\label{eq:roundTrip}
 	T_p=2\frac{2R}{c},
 \end{equation}
-
 where c is the speed of light. The classical FMCW formula is obtained by substituting 
 into eq \ref{eq:fb_alt}:
-
 \begin{equation}
 	\label{eq:classicFMCW}
 	f_b=\frac{\Delta f}{T_b}\frac{2R}{c},
 \end{equation}
-
 relating the beat frequency to the range. Solving for range yields
-
 \begin{equation}
 \label{eq:FMCWrange}
 R=\frac{T_bc}{2\Delta f}f_b.
@@ -156,12 +140,10 @@ R=\frac{T_bc}{2\Delta f}f_b.
 
 Eq \ref{eq:FMCWrange} relates range to beat frequency. The same equation can be used
 to related range resolution $\delta$$f$ and chirp bandwidth:
-
 \begin{equation}
 	\label{eq:FMCWres}
 	\delta R=\frac{T_bc}{2\Delta f}\delta f=\frac{c}{2\Delta f}.
 \end{equation}
-
 Where the frequency resolution $delta$$f$ is approximately equal to 1/$T_b$. 
 
 \subsection{Doppler Effect in FMCW}
@@ -170,33 +152,29 @@ case where the radar, the target, or both are moving will now be examined. The D
 effect describes the change in observed and transmitted frequencies when the distance 
 between the two is changing. The relationship between the transmitted frequency, $f_c$, 
 and the received frequency, $f_r$ can be expressed
-
 \begin{equation}
 	\label{eq:dop1}
 	f_r=\frac{c+v_t}{c+v_s}f_c.
 \end{equation}
-
 Where $v_t$ is the velocity of the target and $v_s$ is the velocity of the source. From
 eq \ref{eq:dop1} it is simple to obtain an equation for the change in frequency, $\Delta$f
 in relation to the difference in velocity of the source and target, $\Delta$$v$:
-
- \begin{equation}
- \label{eq:dop2}
- \Delta f=\frac{\Delta v}{c}f_s.
- \end{equation}
+\begin{equation}
+\label{eq:dop2}
+\Delta f=\frac{\Delta v}{c}f_s.
+\end{equation}
  
- For the following development the radial velocity, $v_r$(m/s), will represent the velocity 
- term causing the Doppler effect. Modifying eq \ref{eq:chirpSig} to incorporate the Doppler 
- shift of the echo signal yields:
+For the following development the radial velocity, $v_r$(m/s), will represent the velocity 
+term causing the Doppler effect. Modifying eq \ref{eq:chirpSig} to incorporate the Doppler 
+shift of the echo signal yields:
  
- \begin{equation}
-	 \label{eq:chirpSigDop}
-	 v_{fm}(t-T_p)=A_c cos[\omega_c(t-T_p)+\frac{A_b}{2} (t-T_p)^2-\frac{2v_r}{c}\omega_c(t-T_p)].
- \end{equation}
+\begin{equation}
+	\label{eq:chirpSigDop}
+	v_{fm}(t-T_p)=A_c cos[\omega_c(t-T_p)+\frac{A_b}{2} (t-T_p)^2-\frac{2v_r}{c}\omega_c(t-T_p)].
+\end{equation}
   
 The new beat frequency then is the same as derived in eqs \ref{eq:fb} and \ref{eq:fb_alt} shifted
 by the Doppler frequency, $f_d$:
-
 \begin{equation}
 	\label{eq:fbDop}
 	f_b=\frac{2v_r}{c}f_c-\frac{A_b}{2\pi}T_p
@@ -222,17 +200,14 @@ f_{bDown}=f_b + f_d
 By using a triangle waveform the sum and difference frequencies can be obtained to isolated range and velocity measurements. 
 Fig \ref{fig:UpDownChirp} illustrates the Doppler effect on an FMCW waveform transmitting a triangle wave pattern.  
 Expressions for $f_r$ and $f_d$ can be obtained by averaging and differencing eqs  \ref{eq:fbUp} and \ref{eq:fbDown}:
-
  \begin{equation}
  \label{eq:fr}
  f_r = \frac{f_{b(Up)}-f_{b(Down)}}{2},
  \end{equation}
-
  \begin{equation}
 \label{eq:fd}
 f_d = \frac{f_{b(Up)}+f_{b(Down)}}{2}.
 \end{equation}
-
 The sign of $f_d$ is determined by the direction of motion. If the range is getting smaller $f_d$ will be positive 
 and if the range is getting larger $f_d$ will be negative. 
 
@@ -306,9 +281,9 @@ direct measurement of the Doppler frequency. This modified chirp process is show
 		\draw (1,4) -- (2,-1) -- (4,-1)  -- (5,2) -- (7,2) -- (8,4) -- (10,4) -- (11,-1) -- (13,-1)
 		-- (14,2) -- (16,2) -- (17,4) -- (19,4) -- (20,-1) -- (22,-1);
 		
-		\draw (2,-1) -- (4,-1) node[pos = 0.5,below,scale=0.7] {Up-chirp Freq.};
-		\draw (5,2) -- (7,2) node[pos = 0.5,above,scale=0.7] {Doppler Freq.};
-		\draw (8,4) -- (10,4) node[pos = 0.5,above,scale=0.7] {Up-chirp Freq.};
+		\draw (2,-1) -- (4,-1) node[pos = 0.5,below,scale=0.5] {Up-chirp Freq.};
+		\draw (5,2) -- (7,2) node[pos = 0.5,above,scale=0.5] {Doppler Freq.};
+		\draw (8,4) -- (10,4) node[pos = 0.5,above,scale=0.5] {Up-chirp Freq.};
 		
 		\end{tikzpicture}
 		\caption{Doppler Effect on FMCW lidar with up-chirp, steady, and down-chirp sections.}
@@ -413,6 +388,7 @@ in eq \ref{eq:heteroSNR} has not been obtained in a coherent heterodyne implemen
 
 
 \subsection{Homodyne Self-Chirped Detection Architecture}
+\label{sec:homodyneSelf}
 The homodyne self-chirped architecture was developed to maintain the receiver sensitivity obtained from coherent
 heterodyne detection while minimizing complexity. In this simplified homodyne detection scheme the laser is 
 modulated by the chirp waveform then split in two. One part of the modulated laser is amplified and sent out the
